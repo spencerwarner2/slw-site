@@ -1,0 +1,72 @@
+/* ============================================================
+   Silver Lake Waterman — Color Tokens
+   Palette sampled directly from the SLW strategy deck.
+   Base ramps first, then semantic aliases.
+   ============================================================ */
+
+:root {
+  /* ---- Brand blue ramp (primary identity color) ---- */
+  --slw-blue: #0093D0;        /* primary — the SLW logo blue */
+  --slw-blue-navy: #194C85;   /* deep authoritative navy */
+  --slw-blue-mid: #297DB3;    /* mid tone for fills / bars */
+  --slw-blue-ocean: #007BAE;  /* pressed / darker interactive */
+  --slw-blue-sky: #73B2E0;
+  --slw-blue-light: #81B0DC;
+  --slw-blue-pale: #C6DFF1;   /* tint fills, chips */
+  --slw-blue-mist: #E1EDF4;   /* lightest wash */
+
+  /* ---- Neutrals (warm-cool gray) ---- */
+  --slw-ink: #424242;         /* primary body text */
+  --slw-slate: #4A4D5E;       /* secondary headings, cool slate */
+  --slw-gray-700: #5E5E5E;
+  --slw-gray-500: #797979;
+  --slw-gray-400: #919191;
+  --slw-gray-300: #D6D6D6;
+  --slw-gray-200: #EBEBEB;
+  --slw-gray-100: #F5F5F5;
+  --slw-gray-50: #FAFAFA;
+  --slw-white: #FFFFFF;
+  --slw-near-black: #0A0E1A;  /* cover / dark section base */
+
+  /* ---- Supporting accents (used sparingly in diagrams) ---- */
+  --slw-amber: #FFB74D;       /* "Flex" / warm callout */
+  --slw-amber-mid: #FFC985;
+  --slw-amber-light: #FFDAA4;
+  --slw-teal: #00AEC0;
+  --slw-teal-deep: #0897A2;
+  --slw-teal-light: #99D4DE;
+  --slw-purple: #6A6AB3;
+  --slw-purple-light: #9C93CA;
+  --slw-purple-deep: #544F6E;
+  --slw-coral: #EC7E8F;
+
+  /* ---- Semantic aliases ---- */
+  --text-primary: var(--slw-ink);
+  --text-secondary: var(--slw-gray-700);
+  --text-muted: var(--slw-gray-500);
+  --text-inverse: var(--slw-white);
+  --text-accent: var(--slw-blue);
+  --text-heading: var(--slw-slate);
+
+  --surface-page: var(--slw-white);
+  --surface-subtle: var(--slw-gray-50);
+  --surface-muted: var(--slw-gray-100);
+  --surface-card: var(--slw-white);
+  --surface-dark: var(--slw-near-black);
+  --surface-tint: var(--slw-blue-mist);
+
+  --border-subtle: var(--slw-gray-200);
+  --border-default: var(--slw-gray-300);
+  --border-strong: var(--slw-gray-400);
+  --border-accent: var(--slw-blue);
+
+  --brand-primary: var(--slw-blue);
+  --brand-navy: var(--slw-blue-navy);
+  --brand-accent-warm: var(--slw-amber);
+
+  /* ---- Interactive ---- */
+  --action-default: var(--slw-blue);
+  --action-hover: var(--slw-blue-ocean);
+  --action-active: var(--slw-blue-navy);
+  --focus-ring: color-mix(in srgb, var(--slw-blue) 45%, transparent);
+}

@@ -1,0 +1,49 @@
+/* ============================================================
+   Silver Lake Waterman — Typography Tokens
+   Proxima Nova (licensed, self-hosted). Light-weight display,
+   medium body, all-caps letterspaced kickers.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-sans: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  /* ---- Weights (mirrors Proxima Nova cut usage in the deck) ---- */
+  --weight-light: 300;    /* display headlines — the deck's signature thin headline */
+  --weight-regular: 400;
+  --weight-medium: 500;   /* body emphasis */
+  --weight-semibold: 600; /* labels, buttons, stat figures */
+  --weight-bold: 700;
+
+  /* ---- Fluid type scale ---- */
+  --text-display-xl: clamp(3rem, 6vw, 5.25rem);   /* hero headline */
+  --text-display-lg: clamp(2.25rem, 4vw, 3.5rem); /* section headline */
+  --text-display-md: clamp(1.75rem, 2.6vw, 2.5rem);
+  --text-title: clamp(1.25rem, 1.6vw, 1.6rem);    /* card / pillar title */
+  --text-lead: clamp(1.125rem, 1.4vw, 1.375rem);  /* sub-headline / lead */
+  --text-body: 1.0625rem;                          /* 17px base body */
+  --text-small: 0.9375rem;
+  --text-caption: 0.8125rem;
+  --text-kicker: 0.75rem;                          /* uppercase eyebrow */
+  --text-stat: clamp(2.5rem, 5vw, 4.5rem);         /* big numeric callouts */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.08;   /* big display */
+  --leading-snug: 1.22;    /* headlines */
+  --leading-normal: 1.5;   /* body */
+  --leading-relaxed: 1.65; /* long-form */
+
+  /* ---- Letter spacing ---- */
+  --tracking-kicker: 0.16em;  /* ALL-CAPS eyebrow labels */
+  --tracking-tight: -0.02em;  /* large display */
+  --tracking-snug: -0.01em;
+  --tracking-normal: 0;
+
+  /* ---- Semantic roles ---- */
+  --font-hero-weight: var(--weight-light);
+  --font-headline-weight: var(--weight-light);
+  --font-kicker-weight: var(--weight-semibold);
+  --font-body-weight: var(--weight-regular);
+  --font-emphasis-weight: var(--weight-semibold);
+}

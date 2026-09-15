@@ -1,0 +1,3 @@
+# SLW website — working draft, not for indexing.
+User-agent: *
+Disallow: /

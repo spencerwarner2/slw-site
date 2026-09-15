@@ -1,0 +1,39 @@
+/* ============================================================
+   Silver Lake Waterman — Elevation, Borders & Effects
+   Institutional restraint: soft, low shadows; thin borders;
+   the signature blue radial glow (echoing the deck cover +
+   TriplePoint-style ellipse washes).
+   ============================================================ */
+
+:root {
+  /* ---- Shadows (soft, diffuse, cool) ---- */
+  --shadow-xs: 0 1px 2px rgba(25, 76, 133, 0.06);
+  --shadow-sm: 0 2px 8px rgba(25, 76, 133, 0.07);
+  --shadow-md: 0 8px 24px rgba(25, 76, 133, 0.09);
+  --shadow-lg: 0 20px 48px rgba(25, 76, 133, 0.12);
+  --shadow-node: 0 0 0 6px rgba(0, 147, 208, 0.12); /* node focus halo */
+
+  /* ---- Borders ---- */
+  --border-width: 1px;
+  --border-hairline: 1px solid var(--slw-gray-200);
+  --border-card: 1px solid var(--slw-gray-200);
+  --border-accent-line: 2px solid var(--slw-blue);
+
+  /* ---- Signature glows / washes ---- */
+  --glow-blue: radial-gradient(60% 60% at 50% 40%,
+      rgba(0, 147, 208, 0.14) 0%,
+      rgba(0, 147, 208, 0) 70%); /* @kind other */
+  --glow-mist: radial-gradient(50% 50% at 50% 50%,
+      rgba(115, 178, 224, 0.18) 0%,
+      rgba(115, 178, 224, 0) 72%); /* @kind other */
+
+  /* Cover / dark gradient sampled from the deck hero */
+  --gradient-cover: linear-gradient(125deg,
+      #0A0E1A 0%, #0d2a4a 42%, #0093D0 78%, #16E7CF 100%); /* @kind other */
+  /* Subtle blue tint fill for diagram areas (the "Flex gap") */
+  --fill-gap: linear-gradient(180deg,
+      rgba(0, 147, 208, 0.16) 0%,
+      rgba(0, 147, 208, 0.04) 100%);
+
+  --surface-blur: saturate(140%) blur(14px);
+}

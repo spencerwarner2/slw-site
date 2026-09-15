@@ -1,0 +1,50 @@
+/* ============================================================
+   Silver Lake Waterman — Spacing & Layout Tokens
+   8px base rhythm; generous institutional whitespace.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (8px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ---- Radii (deck uses crisp corners; UI softens slightly) ---- */
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-wide: 1440px;
+  --container-text: 68ch;              /* @kind spacing */
+  --gutter: clamp(1.25rem, 5vw, 5rem); /* @kind spacing */
+  --section-pad-y: clamp(4rem, 9vw, 9rem); /* @kind spacing */
+
+  /* ---- Stroke widths (line-graphic system) ---- */
+  --stroke-hairline: 1px;
+  --stroke-line: 2px;    /* the lifecycle line */
+  --stroke-emphasis: 3px;
+
+  /* ---- Motion (calm, institutional) ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 260ms;    /* @kind other */
+  --dur-base: 520ms;    /* @kind other */
+  --dur-slow: 900ms;    /* @kind other */
+  --dur-draw: 1600ms;   /* @kind other */
+
+  --z-base: 1;      /* @kind other */
+  --z-nav: 100;     /* @kind other */
+  --z-overlay: 1000; /* @kind other */
+}

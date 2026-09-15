@@ -1,0 +1,120 @@
+/* ============================================================
+   Silver Lake Waterman — Fonts
+   ------------------------------------------------------------
+   Proxima Nova, licensed webfont files, self-hosted from
+   ../assets/fonts/. Full weight range (Thin–Black) plus
+   italics. Helvetica Neue remains the system fallback.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-thinit.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-lightit.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-regularit.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-mediumit.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-semiboldit.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-boldit.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-extraboldit.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proximanova-blackit.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
