@@ -37,12 +37,19 @@
       return '<div class="nav-item' + active + (n.children ? ' has-children' : '') + '">' + link + dd + '</div>';
     }).join('');
     h.innerHTML =
-      '<a class="logo" href="index.html" aria-label="Silver Lake Waterman, home"><img src="../assets/logos/slw-mark.png" alt="SLW"></a>' +
-      '<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>' +
-      '<nav class="nav">' + itemsHtml +
-        '<a class="nav-cta" href="contact.html">Start the conversation</a>' +
-      '</nav>';
+      '<div class="header-inner">' +
+        '<a class="logo" href="index.html" aria-label="Silver Lake Waterman, home"><img src="../assets/logos/slw-mark.png" alt="SLW"></a>' +
+        '<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>' +
+        '<nav class="nav">' + itemsHtml +
+          '<a class="nav-cta" href="contact.html">Start the conversation</a>' +
+        '</nav>' +
+      '</div>';
     document.body.insertBefore(h, document.body.firstChild);
+
+    // the bar is bare over the top of a page and takes its edge once you scroll
+    var edge = function () { h.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', edge, { passive: true });
+    edge();
 
     // mobile toggle
     h.querySelector('.nav-toggle').addEventListener('click', function () { h.classList.toggle('nav-open'); });
