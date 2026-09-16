@@ -494,7 +494,7 @@ h3.head { font-size: var(--text-display-md); }
 .logo-wall img[src$="wander.png"]     { max-height: 56px; }
 .logo-wall img[src$="netomi.png"]     { max-height: 53px; }
 .logo-wall img[src$="ujet.png"]       { max-height: 34px; }
-.logo-wall img[src$="bonusly.png"]    { max-height: 34px; }
+.logo-wall img[src$="bonusly.jpg"]    { max-height: 32px; }
 .logo-wall img[src$="paragon.png"]    { max-height: 34px; }
 .logo-wall img[src$="tapcart.png"]    { max-height: 34px; }
 .logo-wall img[src$="rinsed.jpg"]     { max-height: 34px; }
@@ -686,3 +686,15 @@ h3.head { font-size: var(--text-display-md); }
 .logo-wall img[src$="voxmedia.png"] { max-height: 30px; }
 .logo-wall img[src$="workjam.png"] { max-height: 30px; }
 .logo-wall img[src$="zerofox.png"] { max-height: 30px; }
+
+/* Third batch. Hammerspace joins the list because its refreshed file is a
+   tight crop — without a cap the base 54px would oversize it. */
+.logo-wall img[src$="airship.jpg"] { max-height: 30px; }
+.logo-wall img[src$="damballa.png"] { max-height: 33px; }
+.logo-wall img[src$="digital-guardian.png"] { max-height: 30px; }
+.logo-wall img[src$="findem.png"] { max-height: 30px; }
+.logo-wall img[src$="hammerspace.png"] { max-height: 30px; }
+.logo-wall img[src$="lucidworks.png"] { max-height: 30px; }
+.logo-wall img[src$="popsugar.jpg"] { max-height: 58px; }
+.logo-wall img[src$="robin.png"] { max-height: 30px; }
+.logo-wall img[src$="snaplogic.png"] { max-height: 30px; }
