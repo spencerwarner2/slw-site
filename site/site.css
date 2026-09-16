@@ -605,3 +605,18 @@ h3.head { font-size: var(--text-display-md); }
   font-size: var(--text-small); line-height: var(--leading-relaxed); }
 @media (max-width: 520px) { .bio-head { flex-direction: column; text-align: center; gap: 14px; }
   .bio-li { margin-inline: auto; } }
+
+/* The team's intro stacks: heading, then its supporting line beneath. The
+   portfolio keeps .split-head, where the line sits beside the heading. */
+.team-head { margin-bottom: clamp(2.75rem, 5vw, 4rem); }
+.team-head .head { margin-bottom: 18px; }
+.team-head .lead { margin-bottom: 0; max-width: 46rem; }
+
+/* someone whose photo has not arrived yet, and who therefore has no bio to open */
+.person-flat { cursor: default; }
+.person-flat:hover .avatar { transform: none; box-shadow: none; }
+.person-flat:hover .pn { color: var(--slw-ink); }
+.avatar-mono { display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(160deg, var(--slw-blue-mist), var(--slw-blue-pale));
+  font-size: 1.5rem; font-weight: var(--weight-semibold); color: var(--slw-blue-navy);
+  letter-spacing: 0.02em; }
