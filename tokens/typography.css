@@ -17,9 +17,9 @@
   --weight-bold: 700;
 
   /* ---- Fluid type scale ---- */
-  --text-display-xl: clamp(2.4rem, 3.9vw, 3.4rem);  /* hero headline */
-  --text-display-lg: clamp(1.9rem, 3.1vw, 2.6rem); /* section headline */
-  --text-display-md: clamp(1.75rem, 2.6vw, 2.5rem);
+  --text-display-xl: clamp(2.5rem, 4.8vw, 4.25rem);  /* hero headline */
+  --text-display-lg: clamp(2.1rem, 3.7vw, 3.25rem);  /* section headline */
+  --text-display-md: clamp(1.95rem, 3.1vw, 2.85rem);
   --text-title: clamp(1.25rem, 1.6vw, 1.6rem);    /* card / pillar title */
   --text-lead: clamp(1.125rem, 1.4vw, 1.375rem);  /* sub-headline / lead */
   --text-body: 1.0625rem;                          /* 17px base body */
@@ -29,14 +29,14 @@
   --text-stat: clamp(2.5rem, 5vw, 4.5rem);         /* big numeric callouts */
 
   /* ---- Line heights ---- */
-  --leading-tight: 1.08;   /* big display */
-  --leading-snug: 1.22;    /* headlines */
+  --leading-tight: 1.0;    /* big display, set solid */
+  --leading-snug: 1.08;    /* headlines */
   --leading-normal: 1.5;   /* body */
   --leading-relaxed: 1.65; /* long-form */
 
   /* ---- Letter spacing ---- */
   --tracking-kicker: 0.16em;  /* ALL-CAPS eyebrow labels */
-  --tracking-tight: -0.02em;  /* large display */
+  --tracking-tight: -0.026em; /* large display */
   --tracking-snug: -0.01em;
   --tracking-normal: 0;
 

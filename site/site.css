@@ -128,10 +128,12 @@ main { display: block; }
 body[data-page="portfolio"] .page-hero { padding-bottom: clamp(2rem, 4vw, 3.75rem); }
 
 /* ============ COPY ============ */
-.kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 1.0625rem;
+/* An eyebrow is a label, not a second headline: 17px uppercase was competing
+   with the display type above it. */
+.kicker { display: inline-flex; align-items: center; gap: 9px; font-size: 0.875rem;
   font-weight: var(--weight-semibold); letter-spacing: var(--tracking-kicker); text-transform: uppercase;
-  color: var(--slw-blue-mid); margin: 0 0 22px; }
-.kicker .kmark { width: 30px; height: 12px; overflow: visible; flex: none; }
+  color: var(--slw-blue-mid); margin: 0 0 20px; }
+.kicker .kmark { width: 26px; height: 10px; overflow: visible; flex: none; }
 .kicker .kmark path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round;
   vector-effect: non-scaling-stroke; transform: scaleY(0.04); transform-box: fill-box; transform-origin: center;
   transition: transform 0.5s var(--ease-out); }
@@ -363,9 +365,9 @@ h3.head { font-size: var(--text-display-md); }
   letter-spacing: var(--tracking-kicker); text-transform: uppercase;
   color: var(--slw-blue); background: var(--slw-white); margin: 0 0 30px; }
 
-.hero-head { font-size: clamp(2.2rem, 3.6vw, 3.1rem); font-weight: var(--weight-light);
-  line-height: 1.14; letter-spacing: -0.022em; color: var(--slw-ink);
-  margin: 0 0 24px; }
+.hero-head { font-size: clamp(2.5rem, 4.6vw, 4rem); font-weight: var(--weight-light);
+  line-height: 1.03; letter-spacing: -0.028em; color: var(--slw-ink);
+  margin: 0 0 26px; }
 .hero-head strong { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
 
 .hero-lead { font-size: var(--lead-size); font-weight: var(--weight-light);
@@ -404,9 +406,9 @@ h3.head { font-size: var(--text-display-md); }
    The count-up jitters very slightly without them; the gap at
    rest is the worse of the two.
    ============================================================ */
-.section-eyebrow { font-size: 1.0625rem; font-weight: var(--weight-semibold);
-  text-transform: uppercase; letter-spacing: 0.16em; color: var(--slw-blue-mid);
-  margin: 0 0 22px; }
+.section-eyebrow { font-size: 0.875rem; font-weight: var(--weight-semibold);
+  text-transform: uppercase; letter-spacing: var(--tracking-kicker); color: var(--slw-blue-mid);
+  margin: 0 0 20px; }
 .section-lead { font-size: var(--lead-size); font-weight: var(--weight-light);
   line-height: 1.6; color: var(--slw-ink); max-width: 72ch; margin: 0; text-wrap: balance; }
 .section-lead strong { font-weight: var(--weight-semibold); }
@@ -438,8 +440,9 @@ h3.head { font-size: var(--text-display-md); }
    structural. The hero uses the bright logo blue; everything
    below it uses the deeper #297DB3.
    ============================================================ */
-.section-head { font-size: clamp(1.9rem, 3.1vw, 2.6rem); font-weight: var(--weight-light);
-  line-height: 1.16; letter-spacing: -0.02em; color: var(--slw-ink); margin: 0 0 22px; }
+.section-head { font-size: var(--text-display-lg); font-weight: var(--weight-light);
+  line-height: var(--leading-snug); letter-spacing: var(--tracking-tight);
+  color: var(--slw-ink); margin: 0 0 22px; }
 .section-head em, .section-head strong { font-style: normal;
   font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
 

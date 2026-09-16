@@ -16,7 +16,7 @@
   --slw-blue-mist: #E1EDF4;   /* lightest wash */
 
   /* ---- Neutrals (warm-cool gray) ---- */
-  --slw-ink: #424242;         /* primary body text */
+  --slw-ink: #232D3B;         /* primary text — navy-tinted, not neutral grey */
   --slw-slate: #4A4D5E;       /* secondary headings, cool slate */
   --slw-gray-700: #5E5E5E;
   --slw-gray-500: #797979;
@@ -25,6 +25,7 @@
   --slw-gray-200: #EBEBEB;
   --slw-gray-100: #F5F5F5;
   --slw-gray-50: #FAFAFA;
+  --slw-stone: #F2F4F7;       /* the ground alternate sections sit on */
   --slw-white: #FFFFFF;
   --slw-near-black: #0A0E1A;  /* cover / dark section base */
   --slw-navy-deep: #0B2647;   /* footer ground — deep navy, well below --slw-blue-navy */
@@ -50,7 +51,7 @@
   --text-heading: var(--slw-slate);
 
   --surface-page: var(--slw-white);
-  --surface-subtle: var(--slw-gray-50);
+  --surface-subtle: var(--slw-stone);
   --surface-muted: var(--slw-gray-100);
   --surface-card: var(--slw-white);
   --surface-dark: var(--slw-near-black);
