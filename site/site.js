@@ -9,24 +9,15 @@
 
   /* ---- Nav model ---- */
   var NAV = [
-    { key: 'what', label: 'What We Do', children: [
-      { label: 'Our Approach', href: 'our-approach.html', key: 'our-approach' },
-      { label: 'Flex Capital', href: 'flex-capital.html', key: 'flex-capital' },
-      { label: 'Why SLW', href: 'why-slw.html', key: 'why-slw' }
-    ]},
-    { key: 'firm', label: 'Our Firm', children: [
-      { label: 'About Us', href: 'about.html', key: 'about' },
-      { label: 'Our People', href: 'people.html', key: 'people' },
-      { label: 'Our Values', href: 'values.html', key: 'values' }
-    ]},
+    { key: 'our-approach', label: 'Our Approach', href: 'our-approach.html' },
+    { key: 'about', label: 'Our Firm', href: 'about.html' },
     { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html', children: [
       { label: 'Case Studies', href: 'case-studies.html', key: 'case-studies' }
     ]},
     { key: 'contact', label: 'Contact', href: 'contact.html' }
   ];
   // which top-level owns the current page
-  var OWNER = { 'our-approach':'what','flex-capital':'what','why-slw':'what','about':'firm','people':'firm','values':'firm',
-    'portfolio':'portfolio','case-studies':'portfolio','contact':'contact' };
+  var OWNER = { 'portfolio':'portfolio','case-studies':'portfolio','contact':'contact' };
 
   var caret = '<svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -73,9 +64,10 @@
     var f = document.createElement('footer');
     f.className = 'site-footer';
     f.innerHTML = '<div class="wrap">' +
-      '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
-      '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="flex-capital.html">Flex Capital</a><a href="why-slw.html">Why SLW</a><a href="portfolio.html">Portfolio</a></div>' +
-      '<div><h4>Our Firm</h4><a href="about.html">About Us</a><a href="people.html">Our People</a><a href="values.html">Our Values</a></div>' +
+      '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div>' +
+        '<div class="where">San Francisco, CA<br><a href="mailto:info@slw.vc">info@slw.vc</a></div></div>' +
+      '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="portfolio.html">Portfolio</a></div>' +
+      '<div><h4>Our Firm</h4><a href="about.html">About Us</a></div>' +
       '<div><h4>More</h4><a href="case-studies.html">Case Studies</a><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
       '<div class="legal">© ' + new Date().getFullYear() + ' Silver Lake Waterman. Proprietary &amp; confidential. Prototype site, copy from the SLW website draft. <a href="disclosures.html" style="color:inherit;text-decoration:underline">Disclosures</a></div>' +
     '</div>';
@@ -156,15 +148,5 @@
     document.body.appendChild(a);
   }
 
-  /* ---- edge rail (all pages) linking to Why SLW, always visible except on that page itself ---- */
-  function edgeRail() {
-    if (page === 'why-slw') return;
-    var rail = document.createElement('a');
-    rail.className = 'edge-rail';
-    rail.href = 'why-slw.html';
-    rail.innerHTML = '<span>Why SLW</span>';
-    document.body.appendChild(rail);
-  }
-
-  buildHeader(); buildFooter(); buildFloatingCTA(); edgeRail(); kmarks(); reveal(); scrollbar();
+  buildHeader(); buildFooter(); buildFloatingCTA(); kmarks(); reveal(); scrollbar();
 })();

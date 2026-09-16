@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SLW, Capital that adapts. Partnership that lasts.</title>
+<title>SLW, Lifecycle Capital</title>
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="site.css">
 </head>
@@ -11,347 +11,303 @@
 <div class="scroll-bar"></div>
 
 <!-- HERO -->
+<!-- ============================================================
+     The homepage mirrors slw.vc section for section, rebuilt in this
+     site's own components and type. Copy is the live site's own.
+     ============================================================ -->
+
+<!-- HERO -->
 <section class="panel hero" data-animate>
   <div class="glow-hero"></div>
   <div class="panel-inner hero-split">
 
     <div class="copy">
-      <h1 class="hero-head rise">Capital that adapts.<br><strong>Partnership that lasts</strong>.</h1>
-      <p class="hero-lead rise">SLW provides flexible capital across the full company lifecycle, investing where traditional structures fall short and partnering deeply at <strong>multiple points</strong> to optimize your journey for the next chapter.</p>
-      <a class="hero-cta rise" href="our-approach.html">Our approach
-        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <h1 class="hero-head rise">Lifecycle <strong>Capital</strong>.</h1>
+      <p class="hero-lead rise">SLW partners with great companies by providing flexible growth capital that can help with <strong>any need</strong> across the company lifecycle.</p>
     </div>
 
     <div class="figwrap">
       <svg class="fig" viewBox="26 40 520 322" role="img" aria-label="A company's growth curve from early stage to IPO or acquisition, with SLW engaging at three separate points through the growth and expansion phase rather than at a single round">
-        <defs>
-          <linearGradient id="heroCurve" x1="0" y1="1" x2="1" y2="0">
-            <stop offset="0" stop-color="var(--slw-blue-sky)"/>
-            <stop offset="1" stop-color="var(--slw-blue)"/>
-          </linearGradient>
-        </defs>
+              <defs>
+                <linearGradient id="heroCurve" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stop-color="var(--slw-blue-sky)"/>
+                  <stop offset="1" stop-color="var(--slw-blue)"/>
+                </linearGradient>
+              </defs>
 
-        <!-- area under the curve -->
-        <path class="fade" style="transition-delay:.85s"
-              d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74 L512 298 L32 298 Z"
-              fill="var(--slw-gray-100)" fill-opacity=".3"/>
+              <!-- area under the curve -->
+              <path class="fade" style="transition-delay:.85s"
+                    d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74 L512 298 L32 298 Z"
+                    fill="var(--slw-gray-100)" fill-opacity=".3"/>
 
-        <!-- baseline -->
-        <line x1="32" y1="298" x2="512" y2="298" stroke="var(--slw-gray-200)" stroke-width="1"/>
+              <!-- baseline -->
+              <line x1="32" y1="298" x2="512" y2="298" stroke="var(--slw-gray-200)" stroke-width="1"/>
 
-        <!-- the growth curve -->
-        <path class="draw" style="--len:600"
-              d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74"
-              fill="none" stroke="url(#heroCurve)" stroke-width="2.25" stroke-linecap="round"/>
+              <!-- the growth curve -->
+              <path class="draw" style="--len:600"
+                    d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74"
+                    fill="none" stroke="url(#heroCurve)" stroke-width="2.25" stroke-linecap="round"/>
 
-        <!-- SLW touchpoints, all within growth / expansion -->
-        <g class="pop" style="transition-delay:1.05s">
-          <line x1="204" y1="209" x2="204" y2="189" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
-          <circle cx="204" cy="218" r="8.5" fill="var(--slw-white)"/>
-          <circle cx="204" cy="218" r="4.5" fill="var(--slw-blue)"/>
-          <text class="lbl-slw" x="204" y="181" text-anchor="middle">SLW</text>
-        </g>
-        <g class="pop" style="transition-delay:1.28s">
-          <line x1="331" y1="159" x2="331" y2="139" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
-          <circle cx="331" cy="168" r="8.5" fill="var(--slw-white)"/>
-          <circle cx="331" cy="168" r="4.5" fill="var(--slw-blue)"/>
-          <text class="lbl-slw" x="331" y="131" text-anchor="middle">SLW</text>
-        </g>
-        <g class="pop" style="transition-delay:1.51s">
-          <line x1="445" y1="93" x2="445" y2="73" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
-          <circle cx="445" cy="102" r="8.5" fill="var(--slw-white)"/>
-          <circle cx="445" cy="102" r="4.5" fill="var(--slw-blue)"/>
-          <text class="lbl-slw" x="445" y="65" text-anchor="middle">SLW</text>
-        </g>
+              <!-- SLW touchpoints, all within growth / expansion -->
+              <g class="pop" style="transition-delay:1.05s">
+                <line x1="204" y1="209" x2="204" y2="189" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+                <circle cx="204" cy="218" r="8.5" fill="var(--slw-white)"/>
+                <circle cx="204" cy="218" r="4.5" fill="var(--slw-blue)"/>
+                <text class="lbl-slw" x="204" y="181" text-anchor="middle">SLW</text>
+              </g>
+              <g class="pop" style="transition-delay:1.28s">
+                <line x1="331" y1="159" x2="331" y2="139" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+                <circle cx="331" cy="168" r="8.5" fill="var(--slw-white)"/>
+                <circle cx="331" cy="168" r="4.5" fill="var(--slw-blue)"/>
+                <text class="lbl-slw" x="331" y="131" text-anchor="middle">SLW</text>
+              </g>
+              <g class="pop" style="transition-delay:1.51s">
+                <line x1="445" y1="93" x2="445" y2="73" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+                <circle cx="445" cy="102" r="8.5" fill="var(--slw-white)"/>
+                <circle cx="445" cy="102" r="4.5" fill="var(--slw-blue)"/>
+                <text class="lbl-slw" x="445" y="65" text-anchor="middle">SLW</text>
+              </g>
 
-        <!-- exit -->
-        <g class="pop" style="transition-delay:1.74s">
-          <circle cx="512" cy="74" r="27" fill="#194C85"/>
-          <text class="lbl-svg" x="512" y="71" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">IPO /</text>
-          <text class="lbl-svg" x="512" y="84" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">M&amp;A</text>
-        </g>
+              <!-- exit -->
+              <g class="pop" style="transition-delay:1.74s">
+                <circle cx="512" cy="74" r="27" fill="#194C85"/>
+                <text class="lbl-svg" x="512" y="71" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">IPO /</text>
+                <text class="lbl-svg" x="512" y="84" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">M&amp;A</text>
+              </g>
 
-        <!-- phase bar; labels set like the deck's section heads -->
-        <g class="fade" style="transition-delay:1.95s">
-          <rect x="32" y="326" width="158" height="4" rx="2" fill="var(--slw-blue-sky)"/>
-          <rect x="198" y="326" width="314" height="4" rx="2" fill="var(--hero-accent)"/>
-          <text class="lbl-phase" x="32" y="350">EARLY STAGE</text>
-          <text class="lbl-phase" x="198" y="350">GROWTH / EXPANSION CAPITAL</text>
-        </g>
-      </svg>
+              <!-- phase bar; labels set like the deck's section heads -->
+              <g class="fade" style="transition-delay:1.95s">
+                <rect x="32" y="326" width="158" height="4" rx="2" fill="var(--slw-blue-sky)"/>
+                <rect x="198" y="326" width="314" height="4" rx="2" fill="var(--hero-accent)"/>
+                <text class="lbl-phase" x="32" y="350">EARLY STAGE</text>
+                <text class="lbl-phase" x="198" y="350">GROWTH / EXPANSION CAPITAL</text>
+              </g>
+            </svg>
     </div>
 
   </div>
 </section>
 
-<!-- BY THE NUMBERS -->
-<section class="section section-tint" data-animate data-replay>
-  <div class="wrap">
-    <p class="section-eyebrow rise">By the Numbers</p>
-    <p class="section-lead rise">15 years ago, we built SLW to rewrite the growth capital playbook. The result is capital that <strong>adapts to the company</strong>, instead of the other way around.</p>
-    <div class="stats-band">
-      <div class="stat rise">
-        <div class="fig-num"><b data-count="1.5" data-prefix="$" data-suffix="B">$0B</b></div>
-        <div class="fig-lbl">Capital deployed</div>
-      </div>
-      <div class="stat rise">
-        <div class="fig-num"><b data-count="75" data-suffix="+">0</b></div>
-        <div class="fig-lbl">Portfolio companies</div>
-      </div>
-      <div class="stat rise">
-        <div class="fig-num"><b data-count="30" data-suffix="+">0</b></div>
-        <div class="fig-lbl">Years of combined experience</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- THE PROBLEM WE SEEK TO SOLVE (teaser → our-approach) -->
-<section class="section" data-animate>
-  <div class="wrap split split-figwide">
-    <div class="figwrap">
-      <!-- Slide 9 of the 3.24.26 deck. Colours from the .pptx; proportions from
-           the slide as rendered. One trick carried over from the deck itself: the
-           A→IPO connector is a single straight dotted line, and a white disc in
-           the donut hole hides it, so it reads as broken by the cycle. -->
-      <svg class="fig abc-fig" viewBox="0 0 1070 780" role="img" aria-label="Every funding round repeats the same cycle — price the company, sell equity, find new investors — from round A through C and E, on to IPO or acquisition">
-
-
-        <!-- one straight line from A to IPO, as on the slide -->
-        <line class="fade" style="transition-delay:.3s" x1="53" y1="621" x2="978" y2="86"
-              stroke="#000" stroke-width="2.2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-
-        <!-- white fill hides the connector where it runs behind the cycle -->
-        <circle cx="525" cy="344" r="248" fill="#fff"/>
-
-        <!-- the cycle -->
-        <g class="fade" style="transition-delay:1.3s">
-          <circle cx="525" cy="344" r="248" fill="none" stroke="#000"
-                  stroke-width="2.2" stroke-dasharray="0.1 7" stroke-linecap="round"/>
-          <path d="M359 525 L387 532 L372 551 Z" fill="#000"/>
-        </g>
-
-        <!-- centrepiece sits concentric with the dotted circle (both now centred y=344) -->
-        <g transform="translate(0,42)">
-        <!-- white disc masks the connector inside the hole -->
-        <circle class="pop" style="transition-delay:.7s" cx="525" cy="302" r="160" fill="#fff"/>
-
-        <!-- price company / sell equity / find new investors -->
-        <g class="pop" style="transition-delay:.7s">
-          <path d="M530.10 107.07 A195 195 0 0 1 696.37 395.05 L665.61 378.35 A160 160 0 0 0 529.19 142.05 Z" fill="#0897A2"/>
-          <path d="M691.26 403.89 A195 195 0 0 1 358.74 403.89 L388.58 385.60 A160 160 0 0 0 661.42 385.60 Z" fill="#99D4DE"/>
-          <path d="M353.63 395.05 A195 195 0 0 1 519.90 107.07 L520.81 142.05 A160 160 0 0 0 384.39 378.35 Z" fill="#005456"/>
-        </g>
-
-        <g class="fade" style="transition-delay:1s">
-          <g stroke="var(--slw-gray-400)" stroke-width="1.5">
-            <line x1="525" y1="302" x2="525" y2="107"/>
-            <line x1="525" y1="302" x2="693.9" y2="399.5"/>
-            <line x1="525" y1="302" x2="356.1" y2="399.5"/>
-          </g>
-
-          <g fill="none" stroke="var(--slw-ink)" stroke-width="2.2" stroke-linecap="round">
-            <circle cx="455" cy="226" r="16"/><path d="M455 217v18M446 226h18"/>
-          </g>
-          <text class="abc-ring" x="455" y="268" text-anchor="middle">Find new</text>
-          <text class="abc-ring" x="455" y="290" text-anchor="middle">investors</text>
-
-          <g fill="none" stroke="var(--slw-ink)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M595 206 L610 221 V246 H580 V221 Z"/>
-            <circle cx="595" cy="222" r="2.2" fill="var(--slw-ink)" stroke="none"/>
-          </g>
-          <text class="abc-tag" x="595" y="240" text-anchor="middle">$</text>
-          <text class="abc-ring" x="595" y="268" text-anchor="middle">Price</text>
-          <text class="abc-ring" x="595" y="290" text-anchor="middle">company</text>
-
-          <text class="abc-pct" x="525" y="380" text-anchor="middle">%</text>
-          <text class="abc-ring" x="525" y="404" text-anchor="middle">Sell</text>
-          <text class="abc-ring" x="525" y="426" text-anchor="middle">equity</text>
-        </g>
-        </g>
-
-        <!-- repeat marker, sitting on the dotted circle -->
-        <g class="fade" style="transition-delay:1.55s">
-          <text class="abc-repeat" x="258" y="338" text-anchor="end">Repeat each</text>
-          <text class="abc-repeat" x="258" y="366" text-anchor="end">new round</text>
-          <circle cx="277" cy="344" r="9" fill="#fff" stroke="#0897A2" stroke-width="3"/>
-        </g>
-
-        <!-- rounds -->
-        <g class="pop" style="transition-delay:.4s"><circle cx="53" cy="621" r="34" fill="#9C93CA"/><text class="abc-round" x="53" y="634" text-anchor="middle">A</text></g>
-        <g class="pop" style="transition-delay:.52s"><circle cx="150" cy="565" r="34" fill="#79739E"/><text class="abc-round" x="150" y="578" text-anchor="middle">B</text></g>
-        <g class="pop" style="transition-delay:.64s"><circle cx="247" cy="509" r="34" fill="#6A6AB3"/><text class="abc-round" x="247" y="522" text-anchor="middle">C</text></g>
-        <g class="pop" style="transition-delay:1.7s"><circle cx="809" cy="184" r="37" fill="#544F6E"/><text class="abc-round" x="809" y="197" text-anchor="middle">E</text></g>
-        <g class="pop" style="transition-delay:1.85s">
-          <circle cx="978" cy="86" r="75" fill="#194C85"/>
-          <text class="abc-exit" x="978" y="80" text-anchor="middle">IPO /</text>
-          <text class="abc-exit" x="978" y="112" text-anchor="middle">M&amp;A</text>
-        </g>
-
-        <!-- phases -->
-        <g class="fade" style="transition-delay:2s">
-          <rect x="52" y="695" width="178" height="15" rx="7.5" fill="#73B2E0"/>
-          <rect x="247" y="695" width="741" height="15" rx="7.5" fill="#0093D0"/>
-          <text class="abc-phase" x="60" y="752">VC PHASE</text>
-          <text class="abc-phase" x="295" y="752">GROWTH / EXPANSION CAPITAL PHASE</text>
-        </g>
-      </svg>
-    </div>
-    <div class="copy">
-      <p class="section-eyebrow rise">The Problem We Seek to Solve</p>
-      <h2 class="section-head rise">For four decades, there has been virtually <em>no innovation</em> in growth-stage financing.</h2>
-      <p class="section-lead rise">Companies stay private longer and create enormous value, yet the way they fund growth hasn't changed: round after round of priced equity, each one <strong>expensive, dilutive, and disconnected</strong> from the next. We saw an opportunity to do something different.</p>
-      <a class="section-cta rise" href="our-approach.html">See the full breakdown
-        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FLEX CAPITAL teaser -->
-<section class="section section-mist" data-animate>
-  <div class="wrap split rev">
-    <div class="figwrap">
-      <!-- Slide 14 of the 3.24.26 deck. The two series are the chart part's own
-           numbers, not traced: Equity IRR 0/14/24/32/38/44/48/53/56% (smoothed,
-           dashed) and Flex IRR 10/11/13/14/15/16/17/18/19% (straight). Plot maps
-           1.0x–5.0x to x 228–1000 and 0–60% to y 640–68. -->
-      <svg class="fig flex-fig" viewBox="0 0 1120 780" role="img" aria-label="As valuation rises, the IRR cost of equity climbs steeply from 0 to 56 percent while the cost of Flex stays nearly flat from 10 to 19 percent; the gap between them is the capital saved">
-
-        <!-- capital saved: between the curves, from where they cross to 5.0x -->
-        <path class="fade" style="transition-delay:.9s" fill="#EBEBEB" d="M302.3 537.3 L324.5 506.5
-          C356.7 468.4 388.8 439.8 421 411.2 C453.2 382.6 485.3 357.2 517.5 334.9
-          C549.7 312.7 581.8 296.8 614 277.7 C646.2 258.6 678.3 236.4 710.5 220.5
-          C742.7 204.6 774.8 196.7 807 182.4 C839.2 168.1 871.3 147.5 903.5 134.8
-          C935.7 122.1 967.8 111.0 1000 106.2 L1000 458.9 L903.5 468.4 L807 477.9
-          L710.5 487.5 L614 497 L517.5 506.5 L421 516.1 L324.5 535.1 Z"/>
-
-        <!-- axes -->
-        <g stroke="#000" stroke-width="2">
-          <line x1="228" y1="58" x2="228" y2="640"/>
-          <line x1="228" y1="640" x2="1012" y2="640"/>
-        </g>
-
-        <!-- cost of equity -->
-        <path class="fade" style="transition-delay:.15s" fill="none" stroke="#EC7E8F" stroke-width="7"
-              stroke-dasharray="16 14" stroke-linecap="butt" d="M228 640
-          C260.2 617.8 292.3 544.6 324.5 506.5 C356.7 468.4 388.8 439.8 421 411.2
-          C453.2 382.6 485.3 357.2 517.5 334.9 C549.7 312.7 581.8 296.8 614 277.7
-          C646.2 258.6 678.3 236.4 710.5 220.5 C742.7 204.6 774.8 196.7 807 182.4
-          C839.2 168.1 871.3 147.5 903.5 134.8 C935.7 122.1 967.8 111.0 1000 106.2"/>
-
-        <!-- cost of flex -->
-        <polyline class="draw" style="--len:800;transition-delay:.25s" fill="none" stroke="#81B0DC"
-              stroke-width="9" stroke-linecap="round" stroke-linejoin="round"
-              points="228,544.7 324.5,535.1 421,516.1 517.5,506.5 614,497 710.5,487.5 807,477.9 903.5,468.4 1000,458.9"/>
-
-        <!-- capital savings callout -->
-        <g class="fade" style="transition-delay:1.5s">
-          <rect x="982" y="176" width="36" height="208" fill="#797979"/>
-          <text class="flex-savings" x="1000" y="280" text-anchor="middle" dominant-baseline="central"
-                transform="rotate(90 1000 280)">CAPITAL SAVINGS</text>
-        </g>
-
-        <!-- benefit note -->
-        <g class="fade" style="transition-delay:1.35s">
-          <text class="flex-note" x="655" y="322">BENEFIT INCREASES</text>
-          <text class="flex-note" x="655" y="351">FOR THE BEST</text>
-          <text class="flex-note" x="655" y="380">COMPANIES</text>
-        </g>
-
-        <!-- marked points at 3.0x -->
-        <g class="pop" style="transition-delay:1.05s">
-          <text class="flex-point" x="614" y="245" text-anchor="middle">40%</text>
-          <circle cx="614" cy="277.7" r="14" fill="#fff" stroke="#EC7E8F" stroke-width="4.5"/>
-        </g>
-        <g class="pop" style="transition-delay:1.2s">
-          <text class="flex-point" x="614" y="464" text-anchor="middle">12-15%</text>
-          <circle cx="614" cy="497" r="14" fill="#fff" stroke="#81B0DC" stroke-width="4.5"/>
-        </g>
-
-        <!-- end markers -->
-        <g class="pop" style="transition-delay:1.6s">
-          <circle cx="1000" cy="106.2" r="40" fill="#EC7E8F"/>
-          <image href="../assets/icons/mark-percent.png" x="979.5" y="85.7" width="41" height="41"/>
-          <text class="flex-end" x="1000" y="42" text-anchor="middle">Cost of Equity</text>
-        </g>
-        <g class="pop" style="transition-delay:1.75s">
-          <circle cx="1000" cy="458.9" r="40" fill="#81B0DC"/>
-          <image href="../assets/icons/mark-flex.png" x="959.6" y="418.5" width="80.9" height="80.9" transform="rotate(314.57 1000 458.9)"/>
-          <text class="flex-end" x="1000" y="548" text-anchor="middle">Cost of Flex</text>
-        </g>
-
-        <!-- axis labels -->
-        <g class="fade" style="transition-delay:.45s">
-          <text class="flex-ytick" x="208" y="75"  text-anchor="end">60%</text>
-          <text class="flex-ytick" x="208" y="218" text-anchor="end">45%</text>
-          <text class="flex-ytick" x="208" y="361" text-anchor="end">30%</text>
-          <text class="flex-ytick" x="208" y="504" text-anchor="end">15%</text>
-          <text class="flex-ytick" x="208" y="647" text-anchor="end">0%</text>
-          <text class="flex-xtick" x="228"  y="680" text-anchor="middle">1.0x</text>
-          <text class="flex-xtick" x="421"  y="680" text-anchor="middle">2.0x</text>
-          <text class="flex-xtick" x="614"  y="680" text-anchor="middle">3.0x</text>
-          <text class="flex-xtick" x="807"  y="680" text-anchor="middle">4.0x</text>
-          <text class="flex-xtick" x="1000" y="680" text-anchor="middle">5.0x</text>
-          <text class="flex-axis" x="126" y="72" transform="rotate(-90 126 72)" text-anchor="end">IRR</text>
-          <text class="flex-axis" x="228" y="738">Increase in valuation</text>
-        </g>
-      </svg>
-    </div>
-    <div class="copy">
-      <p class="section-eyebrow rise">Flex Capital</p>
-      <h2 class="section-head rise">A better way to <em>fundraise</em>.</h2>
-      <p class="section-lead rise">Flex is SLW’s proprietary structure. As your company grows, so should your options beyond traditional equity or venture debt. Flex lets you use capital now and return it later, without pricing a round or taking on new covenants. Like raising your Series C <strong>without the price, and giving it back later</strong>.</p>
-      <a class="section-cta rise" href="flex-capital.html">Learn more about Flex Capital
-        <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- THE SLW EDGE -->
+<!-- OUR HISTORY -->
 <section class="section section-tint" data-animate>
-  <div class="wrap" id="the-slw-edge">
-    <div style="max-width:60ch;margin-bottom:44px">
-      <p class="section-eyebrow rise">The SLW Edge</p>
-      <h2 class="section-head rise">A focused, dedicated team, <br><em>over the long haul</em>.</h2>
+  <div class="wrap">
+    <p class="section-eyebrow rise">Our History</p>
+    <div class="prose rise">
+      <p>SLW was founded in 2012 as <strong>Silver Lake Waterman</strong>, a later-stage growth strategy within Silver Lake, the global leader in technology investing. In 2024, we split out as an independent firm, while continuing to maintain a close relationship with Silver Lake.</p>
+      <p>Early on, we saw that funding options for companies were not dynamic enough for the massive and complex venture landscape of today. In response, we developed an innovative investment approach that <strong>solves company needs as they evolve over time</strong>.</p>
     </div>
+  </div>
+</section>
+
+
+<!-- COULD WE FIND A WAY TO? -->
+<section class="section" data-animate>
+  <div class="wrap split split-figwide-end" style="--copy-col:.78fr;--fig-col:1.22fr">
+    <div class="copy">
+      <h2 class="section-head rise">Could we find a <em>way to</em>?</h2>
+      <p class="section-lead rise">We started by imagining how we could solve company needs across their lifecycle.</p>
+    </div>
+    <div class="figwrap">
+      <svg class="fig cwfw-fig" viewBox="-63.9 -57.8 1361.1 1014.4" role="img"
+                 aria-label="A company at the centre of six questions SLW set out to answer: break the one-and-done model, not price the company, provide lower cost capital, build a better pre-IPO or M&amp;A solution, offer highly flexible need-based capital, and create an easier way to partner, plotted against a funding path running from round A through B and E to IPO or M&amp;A">
+              <defs>
+                <linearGradient id="cwfwRing" gradientUnits="userSpaceOnUse"
+                    x1="473.1" y1="273.1" x2="708.9" y2="574.9">
+                  <stop offset="0" stop-color="#6969B8"/><stop offset="1" stop-color="#9D93CA"/>
+                </linearGradient>
+              </defs>
+
+              <!-- the funding path: one straight line through every round marker -->
+              <line class="fade" style="transition-delay:.25s" x1="63" y1="730.88" x2="1134.5" y2="113.77" stroke="#555555" stroke-width="1.02"/>
+
+              <!-- the question at the centre -->
+              <g class="pop">
+                <circle cx="591" cy="424" r="163" fill="none" stroke="url(#cwfwRing)" stroke-width="57"/>
+                <circle cx="591" cy="424" r="134.5" fill="#fff"/>
+                <circle cx="591" cy="424" r="104" fill="#F5F5F5" stroke="#4A4D5E" stroke-width="1.3"/>
+                <text class="cwfw-q" x="593" y="461" text-anchor="middle">?</text>
+              </g>
+
+              <!-- round markers -->
+              <g class="pop" style="transition-delay:0.45s">
+                <circle cx="63" cy="734" r="44.5" fill="#5D5E60"/>
+                <text class="cwfw-round" x="62.5" y="746.5" text-anchor="middle">A</text>
+              </g>
+              <g class="pop" style="transition-delay:0.57s">
+                <circle cx="219" cy="646" r="44.5" fill="#5D5E60"/>
+                <text class="cwfw-round" x="219" y="659.5" text-anchor="middle">B</text>
+              </g>
+              <g class="pop" style="transition-delay:0.69s">
+                <circle cx="941" cy="226" r="44.5" fill="#5D5E60"/>
+                <text class="cwfw-round" x="939.5" y="240.5" text-anchor="middle">E</text>
+              </g>
+              <g class="pop" style="transition-delay:0.81s">
+                <circle cx="1134.5" cy="113" r="80.3" fill="#4B4D5D"/>
+                <text class="cwfw-round cwfw-round-sm" x="1133.6" y="108.5" text-anchor="middle">IPO /</text>
+                <text class="cwfw-round cwfw-round-sm" x="1137.8" y="139.5" text-anchor="middle">M&amp;A</text>
+              </g>
+
+              <!-- leaders: each runs from its bar to the edge of the ring -->
+              <g class="fade" style="transition-delay:.85s" fill="none" stroke="#444444" stroke-width="3.8" stroke-dasharray="3.7 4.4">
+                <path d="M335 163 V302 H443.4"/>
+                <path d="M738 186 V300.1"/>
+                <path d="M268 465 H403.7"/>
+                <path d="M716 569.1 V711 H911"/>
+                <path d="M557 612.5 V834.5 H523"/>
+                <path d="M642 608.6 V895 H665"/>
+              </g>
+
+              <!-- the six answers -->
+              <g class="fade" style="transition-delay:1.0s">
+                <rect x="279.75" y="143" width="113.5" height="21" rx="10.5" fill="#6A6AB9"/>
+                <text class="cwfw-lbl" x="283.3" y="29.68">Break the</text>
+                <text class="cwfw-lbl" x="283.3" y="76.5">“one and</text>
+                <text class="cwfw-lbl" x="283.3" y="123.32">done” model</text>
+              </g>
+              <g class="fade" style="transition-delay:1.1s">
+                <rect x="681.75" y="166" width="113.5" height="21" rx="10.5" fill="#6A6AB9"/>
+                <text class="cwfw-lbl" x="784.9" y="98.11" text-anchor="end">Not price the</text>
+                <text class="cwfw-lbl" x="793.9" y="144.39" text-anchor="end">company</text>
+              </g>
+              <g class="fade" style="transition-delay:1.2s">
+                <rect x="155.25" y="455" width="113.5" height="21" rx="10.5" fill="#6A6AB9"/>
+                <text class="cwfw-lbl" x="159.3" y="343.2">Provide</text>
+                <text class="cwfw-lbl" x="159.3" y="389.48">lower cost</text>
+                <text class="cwfw-lbl" x="159.3" y="436.3">capital</text>
+              </g>
+              <g class="fade" style="transition-delay:1.3s">
+                <rect x="909.75" y="701" width="113.5" height="21" rx="10.5" fill="#9C93CA"/>
+                <text class="cwfw-lbl" x="1013.7" y="589.79" text-anchor="end">Build a better</text>
+                <text class="cwfw-lbl" x="1014.7" y="634.43" text-anchor="end">pre-IPO / M&amp;A</text>
+                <text class="cwfw-lbl" x="1022.7" y="680.71" text-anchor="end">solution</text>
+              </g>
+              <g class="fade" style="transition-delay:1.4s">
+                <rect x="410.75" y="824.5" width="113.5" height="21" rx="10.5" fill="#9C93CA"/>
+                <text class="cwfw-lbl" x="415.8" y="712.22" text-anchor="middle">Offer highly</text>
+                <text class="cwfw-lbl" x="407.3" y="758.5" text-anchor="middle">flexible, need-</text>
+                <text class="cwfw-lbl" x="413.3" y="804.78" text-anchor="middle">based capital</text>
+              </g>
+              <g class="fade" style="transition-delay:1.5s">
+                <rect x="664.75" y="885" width="113.5" height="21" rx="10.5" fill="#9C93CA"/>
+                <text class="cwfw-lbl" x="672.3" y="814.09">Create an easier</text>
+                <text class="cwfw-lbl" x="672.3" y="860.91">way to partner</text>
+              </g>
+            </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- WELCOME TO LIFECYCLE CAPITAL -->
+<section class="section section-mist" data-animate>
+  <div class="wrap" style="text-align:center">
+    <h2 class="section-head rise">Welcome to <em>Lifecycle Capital</em>.</h2>
+    <p class="section-lead rise" style="margin:0 auto 6px">After rethinking every aspect of growth capital, we designed a new, integrated approach.</p>
+    <div class="figwrap lc-wrap">
+      <svg class="fig lc-fig" viewBox="0 0 1274 600" role="img"
+           aria-label="SLW at the centre of a continuous loop with three marks on it: innovative products, a flexible check size, and a lifecycle approach that meets needs now and again as they evolve">
+
+        <!-- the loop: one continuous run, open where the arrow closes it -->
+        <path class="fade" style="transition-delay:.35s" d="M460.07 283.48 A165 165 0 1 1 526.59 345.52" fill="none"
+              stroke="#699BCD" stroke-width="7" stroke-linecap="butt" stroke-dasharray="5.1 2.9"/>
+        <path class="fade" style="transition-delay:.9s" d="M535 334 L508 333 L523 362" fill="none"
+              stroke="#699BCD" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- SLW at the centre -->
+        <g class="pop">
+          <circle cx="601.5" cy="198.5" r="114" fill="#3C87C2"/>
+          <text class="lc-mark" x="601.5" y="219.5" text-anchor="middle">SLW</text>
+        </g>
+
+        <!-- what the loop is made of -->
+        <g class="pop" style="transition-delay:0.50s">
+          <circle cx="459.65" cy="103.54" r="26.3" fill="#3A71A4"/>
+          <path d="M449.15 104.04 L456.15 111.54 L470.15 96.04" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g class="pop" style="transition-delay:0.65s">
+          <circle cx="742.85" cy="102.8" r="26.3" fill="#3A71A4"/>
+          <path d="M732.35 103.3 L739.35 110.8 L753.35 95.3" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <g class="pop" style="transition-delay:0.80s">
+          <circle cx="601.5" cy="369.2" r="26.3" fill="#3A71A4"/>
+          <path d="M591 369.7 L598 377.2 L612 361.7" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- the three claims -->
+        <g class="fade" style="transition-delay:0.95s">
+          <text class="lc-head" x="364" y="118" text-anchor="end">Innovative products</text>
+          <text class="lc-body" x="364" y="156" text-anchor="end">Range of solutions to solve</text>
+          <text class="lc-body" x="364" y="184.5" text-anchor="end">any need — fund growth,</text>
+          <text class="lc-body" x="364" y="213" text-anchor="end">M&amp;A, special situations</text>
+        </g>
+        <g class="fade" style="transition-delay:1.07s">
+          <text class="lc-head" x="840" y="118">Flexible check size</text>
+          <text class="lc-body" x="840" y="156">We can start small or</text>
+          <text class="lc-body" x="840" y="184.5">large with the ability to</text>
+          <text class="lc-body" x="840" y="213">invest $10-100M+</text>
+        </g>
+        <g class="fade" style="transition-delay:1.19s">
+          <text class="lc-head" x="602" y="466" text-anchor="middle">Lifecycle approach</text>
+          <text class="lc-body" x="602" y="504" text-anchor="middle">Ability to meet current</text>
+          <text class="lc-body" x="602" y="532.5" text-anchor="middle">needs and support in the</text>
+          <text class="lc-body" x="602" y="561" text-anchor="middle">future as needs evolve</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- A WIDE RANGE OF NEEDS -->
+<section class="section" data-animate>
+  <div class="wrap">
+    <h2 class="section-head rise" style="margin-bottom:34px">SLW can help with a <em>wide range of needs</em>.</h2>
     <div class="pillars">
       <div class="pcard rise">
-        <svg class="motif" viewBox="0 0 120 60" aria-hidden="true">
-          <path class="draw" style="--len:150" d="M6 50 C 40 50 44 22 72 20 C 96 18 100 12 114 10" fill="none" stroke="var(--slw-blue)" stroke-width="2.5" stroke-linecap="round"/>
-          <g fill="var(--slw-blue)"><circle class="pop" style="transition-delay:.5s" cx="40" cy="35" r="4.5"/><circle class="pop" style="transition-delay:.7s" cx="72" cy="20" r="4.5"/><circle class="pop" style="transition-delay:.9s" cx="106" cy="11" r="4.5"/></g>
-        </svg>
-        <h3>Lifecycle Mindset</h3>
-        <p>The end of “one and done.” We partner across time and circumstance, creating solutions for any need, now or in the future.</p>
+        <h3>Flex</h3>
+        <p>Flexible, innovative solutions combined with flexible check size.</p>
+        <p class="ideal"><span>Ideal for</span>When you don&#8217;t want to price or sell equity, or when a customized solution is required.</p>
       </div>
-      <div class="pcard rise">
-        <svg class="motif" viewBox="0 0 120 60" aria-hidden="true">
-          <rect class="pop" style="transition-delay:.4s" x="8" y="10" width="104" height="12" rx="6" fill="var(--slw-blue)"/>
-          <rect class="pop" style="transition-delay:.6s" x="8" y="26" width="76" height="12" rx="6" fill="var(--slw-blue-light)"/>
-          <rect class="pop" style="transition-delay:.8s" x="8" y="42" width="52" height="12" rx="6" fill="var(--slw-blue-pale)"/>
-        </svg>
-        <h3>Structural Flexibility</h3>
-        <p>Flexible check sizes and creative structures let us meet a company where it is, saving on the cost of capital along the way.</p>
+      <div class="pcard rise" style="transition-delay:.1s">
+        <h3>SLW Preferred</h3>
+        <p>Fair and balanced solution to solve valuation issues.</p>
+        <p class="ideal"><span>Ideal for</span>Situations requiring a fair and balanced approach to valuation complexities.</p>
       </div>
-      <div class="pcard rise">
-        <svg class="motif" viewBox="0 0 120 60" aria-hidden="true">
-          <g class="fade" style="transition-delay:.5s" stroke="var(--slw-blue-pale)" stroke-width="1.6" fill="none"><path d="M22 30 L 60 12"/><path d="M22 30 L 60 30"/><path d="M22 30 L 60 48"/></g>
-          <circle class="pop" style="transition-delay:.4s" cx="22" cy="30" r="8" fill="var(--slw-blue-navy)"/>
-          <g fill="var(--slw-blue)"><circle class="pop" style="transition-delay:.7s" cx="64" cy="12" r="4.5"/><circle class="pop" style="transition-delay:.85s" cx="64" cy="30" r="4.5"/><circle class="pop" style="transition-delay:1s" cx="64" cy="48" r="4.5"/></g>
-        </svg>
-        <h3>Focused Partnership</h3>
-        <p>Our team of industry insiders works with a select roster of companies, deep relationships, not a broad book.</p>
+      <div class="pcard rise" style="transition-delay:.2s">
+        <h3>Equity</h3>
+        <p>Ability to lead or participate.</p>
+        <p class="ideal"><span>Ideal for</span>When you are raising a traditional equity round and need a lead or participant.</p>
       </div>
     </div>
-    <a class="section-cta rise" style="margin-top:40px" href="our-approach.html">Explore our investment approach
-      <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
   </div>
 </section>
 
-<!-- SELECT PORTFOLIO -->
+
+<!-- NOT ONE AND DONE -->
+<section class="section section-tint" data-animate>
+  <div class="wrap">
+    <h2 class="section-head rise">We will change how you think about <em>growth capital</em>.</h2>
+    <p class="section-lead rise">We don&#8217;t do &#8220;one and done.&#8221; SLW can help today and in the future.</p>
+    <div class="tf rise">
+      <div class="col today">
+        <div class="lab">Optimize today</div>
+        <ul><li>Price</li><li>Don&#8217;t price</li><li>Bespoke solutions</li><li>Small / large check</li></ul>
+      </div>
+      <div class="col future">
+        <div class="lab">Future help</div>
+        <ul><li>M&amp;A</li><li>Pre-IPO</li><li>Growth capital</li><li>Special situations</li></ul>
+      </div>
+      <div class="col outcome">
+        <div class="lab">The end result</div>
+        <ul class="ticks"><li>Lower cost of capital</li><li>Optimized equity</li><li>Fund M&amp;A &amp; growth</li><li>Less need to raise equity</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO -->
 <section class="section" data-animate>
   <div class="wrap">
     <div class="port-head">
@@ -387,12 +343,13 @@
   </div>
 </section>
 
-<!-- CLOSE CTA -->
+
+<!-- THE TEAM -->
 <section class="section section-mist" data-animate>
   <div class="wrap" style="text-align:center">
-    <h2 class="section-head rise" style="font-size:clamp(1.9rem, 3.3vw, 2.9rem);margin-bottom:20px">We are <strong>lifecycle capital partners</strong>.</h2>
-    <p class="section-lead rise" style="margin:0 auto 28px">If you’re a founder or investor looking for flexible growth capital, we’d love to hear from you.</p>
-    <div class="rise"><a class="btn" href="contact.html">Start the conversation
+    <h2 class="section-head rise" style="font-size:clamp(1.9rem, 3.3vw, 2.9rem);margin-bottom:20px">Our goal is to be one of your <strong>most impactful partners</strong>.</h2>
+    <p class="section-lead rise" style="margin:0 auto 28px">We bring deep experience, a powerful network and strategic capital to help you scale and achieve meaningful outcomes.</p>
+    <div class="rise"><a class="btn" href="about.html">View our team
       <svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a></div>
   </div>

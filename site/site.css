@@ -406,7 +406,13 @@ h3.head { font-size: var(--text-display-md); }
 
 
 /* Problem section: the diagram is the point, so it takes the wider column. */
-.split.split-figwide { grid-template-columns: 1.18fr 0.82fr; }
+@media (min-width: 901px) { .split.split-figwide { grid-template-columns: 1.18fr 0.82fr; } }
+/* ...and the mirror of it, for a section whose figure sits on the right.
+   A section can retune the divide with --copy-col / --fig-col when its copy
+   reads better narrow and its figure wants the width. */
+@media (min-width: 901px) {
+  .split.split-figwide-end { grid-template-columns: var(--copy-col, 0.82fr) var(--fig-col, 1.18fr); }
+}
 
 /* ------------------------------------------------------------
    A/B/Cs diagram — slide 9 of the 3.24.26 deck, rendered.
@@ -503,9 +509,76 @@ h3.head { font-size: var(--text-display-md); }
    ============================================================ */
 .kicker .kmark { display: none; }
 .lead strong { font-weight: var(--weight-semibold); }
+/* A lead set in a narrow column beside a figure strands its last word: at 1200
+   and 1366 this one broke to "or M&A." alone. Balance evens the lines instead,
+   without changing how many there are. */
+.lead-balanced { text-wrap: balance; }
 /* the boxed grid used on portfolio pages: drop the cell borders and the
    desaturation so it reads like the homepage wall */
 .logo-grid { gap: clamp(1.75rem, 3vw, 2.75rem); background: transparent; border: 0; border-radius: 0; overflow: visible; }
 .logo-grid .cell { background: transparent; aspect-ratio: auto; padding: 8px 0; min-height: 64px; }
 .logo-grid img { max-height: 40px; max-width: 86%; }
 [data-animate].in .logo-grid img { opacity: 1; }
+
+/* ------------------------------------------------------------
+   Hub-and-spoke on Our Approach — slide 11 of the 11.18.25 deck.
+   Slide type is 23pt; 1 viewBox unit here is 0.78pt, so that
+   lands at 29.5.
+   ------------------------------------------------------------ */
+.hub-fig text { font-family: var(--font-sans); }
+.hub-lbl { font-size: 32px; font-weight: var(--weight-semibold); fill: var(--slw-ink); }
+
+/* ------------------------------------------------------------
+   "Could we find a better way" — rebuilt from the graphic on the
+   live site (slw.vc/img/cwfwt.png, 1225x913). The original is set
+   in Proxima Nova Semibold; sizes below are the measured ones, so
+   one viewBox unit is one pixel of that image.
+   ------------------------------------------------------------ */
+.cwfw-fig text { font-family: var(--font-sans); }
+.cwfw-lbl      { font-size: 39.2px; font-weight: var(--weight-semibold); fill: #2F2F2F; }
+.cwfw-q        { font-size: 103px;  font-weight: var(--weight-semibold); fill: #4D4D4D; }
+.cwfw-round    { font-size: 40px;   font-weight: var(--weight-semibold); fill: #fff; }
+.cwfw-round-sm { font-size: 30.5px; font-weight: var(--weight-semibold); fill: #fff; }
+
+/* ------------------------------------------------------------
+   "We create value at every stage" — slide 20 of the 2.4.25 deck.
+   EMU converted at 9525 per unit, so one viewBox unit is one slide
+   pixel and the deck's 20pt type becomes 26.67 units. That lands at
+   17px on screen, the same as the other two figures on this page.
+   ------------------------------------------------------------ */
+.stage-fig text { font-family: var(--font-sans); fill: #424242; }
+.stage-lbl      { font-size: 26.67px; font-weight: var(--weight-semibold); }
+/* REVENUE is an axis label, not a figure: much smaller than the deck sets it,
+   tracked like the site's other small caps, and on the figures' own baseline. */
+.stage-rev      { font-size: 16px; font-weight: var(--weight-semibold); letter-spacing: 1.92px; }
+
+/* ------------------------------------------------------------
+   "Welcome to Lifecycle Capital" — rebuilt from the graphic on the
+   live site (slw.vc/img/lifecycle.png, 1274x600). Centres, radii,
+   colours, dash and type sizes are measured off that image, so one
+   viewBox unit is one of its pixels.
+   ------------------------------------------------------------ */
+.lc-wrap { max-width: 880px; margin: 26px auto 0; }
+.lc-fig text { font-family: var(--font-sans); }
+.lc-mark { font-size: 60px;   font-weight: var(--weight-bold);     fill: #fff; }
+.lc-head { font-size: 32px;   font-weight: var(--weight-semibold); fill: #2F2F2F; }
+.lc-body { font-size: 27.7px; font-weight: var(--weight-regular);  fill: var(--slw-ink); }
+
+/* the "Ideal for" note that closes each product card */
+.pcard .ideal { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--slw-gray-200);
+  font-size: var(--text-caption); color: var(--slw-gray-700); line-height: var(--leading-normal); }
+.pcard .ideal span { display: block; margin-bottom: 4px; text-transform: uppercase;
+  letter-spacing: 0.12em; font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+
+/* the three columns of "one and done" carry lists rather than prose */
+.tf ul { list-style: none; margin: 0; padding: 0; }
+.tf li { font-size: var(--text-small); color: var(--slw-ink); line-height: var(--leading-normal);
+  padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.tf li:last-child { border-bottom: 0; }
+.tf .outcome li { color: var(--slw-white); border-bottom-color: rgba(255,255,255,0.16); }
+.tf .ticks li::before { content: '\2713'; margin-right: 8px; color: var(--slw-blue-sky); font-weight: var(--weight-semibold); }
+
+/* location and address, as the live site's footer carries them */
+.site-footer .where { margin-top: 14px; font-size: var(--text-caption); line-height: 1.7; color: rgba(255,255,255,0.6); }
+.site-footer .where a { color: inherit; }
+.site-footer .where a:hover { color: #fff; }
