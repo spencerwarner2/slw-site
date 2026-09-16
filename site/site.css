@@ -440,13 +440,19 @@ h3.head { font-size: var(--text-display-md); }
    their own colours; hover lifts and softens them slightly so the
    grid still responds to the pointer.
    ============================================================ */
-/* an even split: at 0.85fr the stat fell 3px short of two lines at 1440 */
-.port-head { display: grid; grid-template-columns: 1fr 1fr;
+/* a heading on the left with its supporting line on the right */
+.split-head { display: grid; grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end;
   margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
-.port-stat { max-width: 40ch; margin: 0; }
+@media (max-width: 880px) { .split-head { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; } }
+
+/* a heading with its line stacked beneath, running most of the measure.
+   46rem holds two lines at every size the type clamps to, 19px through 22px;
+   past about 47rem it collapses to one. */
+.port-head { margin-bottom: clamp(3.5rem, 7vw, 5.5rem); }
+.port-head .section-head { margin-bottom: 20px; }
+.port-stat { max-width: 46rem; margin: 0; text-wrap: balance; }
 .port-stat strong { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
-@media (max-width: 880px) { .port-head { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; } }
 
 .logo-wall { list-style: none; margin: 0; padding: 0; display: grid;
   grid-template-columns: repeat(5, 1fr);
