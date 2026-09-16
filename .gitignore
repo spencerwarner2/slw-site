@@ -4,3 +4,6 @@ Resources/
 
 # Office lock files
 ~$*
+
+# Scratch comparison harness for rebuilding graphics; not part of the site.
+_diff/
