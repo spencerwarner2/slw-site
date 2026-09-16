@@ -147,5 +147,21 @@
     document.body.appendChild(a);
   }
 
-  buildHeader(); buildFooter(); buildFloatingCTA(); kmarks(); reveal(); scrollbar();
+  /* ---- team bios: a face opens that person's dialog ---- */
+  function teamBios() {
+    var cards = document.querySelectorAll('.person[data-bio]');
+    Array.prototype.forEach.call(cards, function (card) {
+      var dlg = document.getElementById(card.getAttribute('data-bio'));
+      if (!dlg || !dlg.showModal) return;
+      card.addEventListener('click', function () { dlg.showModal(); });
+      // clicking the backdrop lands on the dialog itself, not its contents
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg) dlg.close();
+      });
+      var x = dlg.querySelector('.bio-x');
+      if (x) x.addEventListener('click', function () { dlg.close(); });
+    });
+  }
+
+  buildHeader(); buildFooter(); buildFloatingCTA(); kmarks(); reveal(); scrollbar(); teamBios();
 })();

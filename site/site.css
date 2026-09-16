@@ -227,13 +227,6 @@ h3.head { font-size: var(--text-display-md); }
 .vcard h3 { font-size: var(--text-title); font-weight: var(--weight-semibold); color: var(--slw-ink); margin: 8px 0 10px; }
 .vcard p { font-size: var(--text-small); line-height: var(--leading-normal); color: var(--slw-ink); margin: 0; }
 
-/* people */
-.people { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 2rem); }
-@media (max-width: 900px) { .people { grid-template-columns: repeat(2, 1fr); } }
-.person .avatar { aspect-ratio: 1; border-radius: var(--radius-lg); background: linear-gradient(160deg, var(--slw-blue-mist), var(--slw-blue-pale));
-  display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: var(--weight-semibold); color: var(--slw-blue-navy); }
-.person .pn { margin-top: 14px; font-weight: var(--weight-semibold); color: var(--slw-slate); }
-.person .pr { font-size: var(--text-caption); color: var(--text-muted); margin-top: 3px; }
 
 /* timeline (history) */
 .tl { position: relative; padding-left: 28px; }
@@ -554,5 +547,44 @@ h3.head { font-size: var(--text-display-md); }
 
 /* Headshots from slw.vc/team. They are palette PNGs already masked to a circle,
    so the frame is a circle too and clips whatever ground each one carries. */
-.person .avatar:has(img) { border-radius: 50%; background: var(--slw-gray-100); overflow: hidden; }
+
+/* ------------------------------------------------------------
+   The team. Faces are small and the type is centred under each
+   one; a card opens that person's bio, the way slw.vc serves it.
+   ------------------------------------------------------------ */
+.people { display: flex; flex-wrap: wrap; justify-content: center;
+  gap: clamp(1.75rem, 3.2vw, 2.6rem) clamp(1.25rem, 2.4vw, 2rem); }
+.person { flex: 0 0 148px; display: block; text-align: center; cursor: pointer;
+  margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; }
+.person .avatar { display: block; width: 100px; height: 100px; margin: 0 auto;
+  border-radius: 50%; background: var(--slw-gray-100); overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
 .person .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.person:hover .avatar { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.person:focus-visible .avatar { outline: 2px solid var(--slw-blue-mid); outline-offset: 3px; }
+.person .pn { display: block; margin-top: 14px; font-size: 0.9375rem;
+  font-weight: var(--weight-semibold); color: var(--slw-ink); line-height: 1.35; }
+.person .pr { display: block; margin-top: 2px; font-size: var(--text-caption); color: var(--slw-gray-700); }
+
+/* the bio itself */
+.bio { width: min(620px, calc(100vw - 2.5rem)); max-height: 86vh; overflow-y: auto;
+  padding: 0 0 clamp(1.75rem, 4vw, 2.25rem); border: 0; border-radius: var(--radius-lg);
+  background: #fff; color: var(--slw-ink); box-shadow: var(--shadow-lg); }
+.bio::backdrop { background: rgba(11, 38, 71, 0.55); }
+.bio-x { position: sticky; top: 14px; z-index: 2; display: block; width: 32px; height: 32px;
+  margin: 14px 14px -22px auto; border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--slw-gray-100); color: var(--slw-gray-700); font-size: 19px; line-height: 1; }
+.bio-x:hover { background: var(--slw-gray-200); color: var(--slw-ink); }
+.bio-head { display: flex; gap: 20px; align-items: center;
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2.25rem) 0; }
+.bio-head img { flex: none; width: 84px; height: 84px; border-radius: 50%; background: var(--slw-gray-100); }
+.bio-head h3 { margin: 0; font-size: var(--text-title); font-weight: var(--weight-semibold); color: var(--slw-ink); }
+.bio-role { margin: 3px 0 0; font-size: var(--text-caption); color: var(--slw-gray-700); }
+.bio-li { display: inline-flex; align-items: center; gap: 6px; margin-top: 9px;
+  font-size: var(--text-caption); font-weight: var(--weight-semibold);
+  color: var(--slw-blue-mid); text-decoration: none; }
+.bio-li:hover { color: var(--slw-blue-ocean); }
+.bio > p { margin: 18px 0 0; padding-inline: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: var(--text-small); line-height: var(--leading-relaxed); }
+@media (max-width: 520px) { .bio-head { flex-direction: column; text-align: center; gap: 14px; }
+  .bio-li { margin-inline: auto; } }
