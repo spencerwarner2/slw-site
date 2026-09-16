@@ -442,16 +442,17 @@ h3.head { font-size: var(--text-display-md); }
    ============================================================ */
 /* a heading on the left with its supporting line on the right */
 .split-head { display: grid; grid-template-columns: 1fr 1fr;
-  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end;
+  gap: clamp(1.75rem, 5vw, 4.5rem); align-items: end;
   margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
+/* the supporting line carries a bottom margin of its own, which pushed its text
+   up off the heading's baseline once the row was bottom-aligned */
+.split-head > p { margin-bottom: 0; }
 @media (max-width: 880px) { .split-head { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; } }
 
-/* a heading with its line stacked beneath, running most of the measure.
-   46rem holds two lines at every size the type clamps to, 19px through 22px;
-   past about 47rem it collapses to one. */
-.port-head { margin-bottom: clamp(3.5rem, 7vw, 5.5rem); }
-.port-head .section-head { margin-bottom: 20px; }
-.port-stat { max-width: 46rem; margin: 0; text-wrap: balance; }
+/* the supporting line sits in the right column; an even split gives it about
+   500px, and it needs roughly 480px to hold two lines at the largest size the
+   type clamps to. Balanced, so the two come out even. */
+.port-stat { max-width: 34rem; margin: 0; text-wrap: balance; }
 .port-stat strong { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
 
 .logo-wall { list-style: none; margin: 0; padding: 0; display: grid;
