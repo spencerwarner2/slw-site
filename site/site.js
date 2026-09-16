@@ -11,13 +11,11 @@
   var NAV = [
     { key: 'our-approach', label: 'Our Approach', href: 'our-approach.html' },
     { key: 'about', label: 'Our Firm', href: 'about.html' },
-    { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html', children: [
-      { label: 'Case Studies', href: 'case-studies.html', key: 'case-studies' }
-    ]},
+    { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html' },
     { key: 'contact', label: 'Contact', href: 'contact.html' }
   ];
   // which top-level owns the current page
-  var OWNER = { 'portfolio':'portfolio','case-studies':'portfolio','contact':'contact' };
+  var OWNER = { 'contact':'contact' };
 
   var caret = '<svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -67,7 +65,7 @@
       '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
       '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="portfolio.html">Portfolio</a></div>' +
       '<div><h4>Our Firm</h4><a href="about.html">About Us</a></div>' +
-      '<div><h4>More</h4><a href="case-studies.html">Case Studies</a><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
+      '<div><h4>More</h4><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
       '<div class="legal">© ' + new Date().getFullYear() + ' Silver Lake Waterman. Proprietary &amp; confidential. Prototype site, copy from the SLW website draft. <a href="disclosures.html" style="color:inherit;text-decoration:underline">Disclosures</a></div>' +
     '</div>';
     document.body.appendChild(f);
@@ -137,16 +135,6 @@
     var t = false; window.addEventListener('scroll', function () { if (!t) { requestAnimationFrame(function () { on(); t = false; }); t = true; } }, { passive: true }); on();
   }
 
-  function buildFloatingCTA() {
-    if (page === 'case-studies') return;
-    var a = document.createElement('a');
-    a.className = 'float-cta';
-    a.href = 'case-studies.html';
-    a.innerHTML = 'Case Studies' +
-      '<svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    document.body.appendChild(a);
-  }
-
   /* ---- team bios: a face opens that person's dialog ---- */
   function teamBios() {
     var cards = document.querySelectorAll('.person[data-bio]');
@@ -163,5 +151,5 @@
     });
   }
 
-  buildHeader(); buildFooter(); buildFloatingCTA(); kmarks(); reveal(); scrollbar(); teamBios();
+  buildHeader(); buildFooter(); kmarks(); reveal(); scrollbar(); teamBios();
 })();
