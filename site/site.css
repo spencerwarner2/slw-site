@@ -766,3 +766,80 @@ h3.head { font-size: var(--text-display-md); }
 
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
+
+/* ============ COMPARISON ============
+   Three columns sharing one template per row, so the rows can become cards on
+   a phone without a second markup path. The SLW column is a single tinted
+   panel: the hairlines that separate rows are drawn on the two plain columns
+   only, so the tint runs unbroken from the header to the last row. */
+.cmp { --cmp-cols: minmax(128px, 0.6fr) 1fr 1fr; }
+.cmp-intro { margin-bottom: clamp(2.25rem, 4vw, 3.25rem); }
+.cmp-intro .head { margin-bottom: 18px; }
+.cmp-intro .lead { margin-bottom: 0; max-width: 62ch; }
+
+.cmp-row { display: grid; grid-template-columns: var(--cmp-cols); }
+.cmp-row > * { padding: clamp(1.15rem, 1.7vw, 1.6rem) clamp(1rem, 1.5vw, 1.45rem); }
+.cmp-row + .cmp-row > .cmp-dim,
+.cmp-row + .cmp-row > .cmp-alt { border-top: 1px solid var(--slw-gray-200); }
+.cmp-row + .cmp-row > .cmp-slw { box-shadow: inset 0 1px 0 rgba(25, 76, 133, 0.09); }
+
+.cmp-slw { background: var(--slw-blue-mist); }
+.cmp-head .cmp-slw { background: var(--slw-blue-mid);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.cmp-row:last-child .cmp-slw { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+
+/* the header sits on the baseline of the row so the two names line up */
+.cmp-head > * { display: flex; flex-direction: column; justify-content: flex-end; gap: 5px;
+  padding-top: clamp(1.5rem, 2.2vw, 2.1rem); padding-bottom: clamp(1.15rem, 1.7vw, 1.5rem); }
+.cmp-badge { align-self: flex-start; margin-bottom: 3px; padding: 4px 10px;
+  border-radius: var(--radius-pill); background: rgba(255,255,255,0.22); color: #fff;
+  font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.14em;
+  font-weight: var(--weight-semibold); }
+.cmp-name { font-size: var(--text-title); font-weight: var(--weight-semibold);
+  color: var(--slw-slate); line-height: 1.2; }
+.cmp-sub { font-size: var(--text-caption); font-weight: var(--weight-medium); color: var(--text-muted); }
+.cmp-head .cmp-slw .cmp-name { color: #fff; }
+.cmp-head .cmp-slw .cmp-sub { color: rgba(255,255,255,0.85); }
+
+/* the dimension reads as an eyebrow, the same treatment small labels get elsewhere */
+.cmp-dim { display: flex; align-items: center; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: var(--tracking-kicker);
+  font-weight: var(--weight-semibold); color: var(--slw-navy-deep); }
+.cmp-slw, .cmp-alt { font-size: var(--text-small); line-height: var(--leading-normal);
+  color: var(--text-secondary); }
+.cmp-alt strong { color: var(--slw-slate); font-weight: var(--weight-semibold); }
+.cmp-slw strong { color: var(--slw-blue-navy); font-weight: var(--weight-semibold); }
+.cmp-slw .ck { display: inline-flex; margin-right: 7px; color: var(--slw-blue-mid); vertical-align: -2px; }
+.cmp-slw .ck svg { width: 15px; height: 15px; }
+
+.cmp-note { margin: 18px 0 0; font-size: var(--text-caption);
+  font-weight: var(--weight-light); color: var(--slw-gray-500); max-width: 70ch; }
+
+/* rows arrive one after another, the way the logo wall sweeps its columns */
+[data-animate] .cmp-row { opacity: 0; transform: translateY(16px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+[data-animate].in .cmp-row { opacity: 1; transform: none; }
+.cmp-row:nth-child(1) { transition-delay: 0ms }
+.cmp-row:nth-child(2) { transition-delay: 70ms }
+.cmp-row:nth-child(3) { transition-delay: 140ms }
+.cmp-row:nth-child(4) { transition-delay: 210ms }
+.cmp-row:nth-child(5) { transition-delay: 280ms }
+.cmp-row:nth-child(6) { transition-delay: 350ms }
+.cmp-row:nth-child(7) { transition-delay: 420ms }
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] .cmp-row { opacity: 1; transform: none; transition: none; transition-delay: 0s !important; }
+}
+
+/* a phone gets one card per dimension, each naming its two sides */
+@media (max-width: 760px) {
+  .cmp-head { display: none; }
+  .cmp-row { grid-template-columns: 1fr; margin-bottom: 14px; background: #fff;
+    border: 1px solid var(--slw-gray-200); border-radius: var(--radius-lg); overflow: hidden; }
+  .cmp-row > * { border-top: 0; box-shadow: none; padding: 15px 18px; }
+  .cmp-row .cmp-slw { border-radius: 0; }
+  .cmp-dim { background: var(--slw-navy-deep); color: #fff; font-size: 0.8125rem; }
+  .cmp-slw::before, .cmp-alt::before { content: attr(data-label); display: block; margin-bottom: 6px;
+    font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.14em;
+    font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+  .cmp-alt::before { color: var(--slw-gray-500); }
+}
