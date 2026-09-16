@@ -745,3 +745,6 @@ h3.head { font-size: var(--text-display-md); }
    was holding them down; at the wider measure it lets go and they need one. */
 .logo-wall img[src$="afresh.webp"] { max-height: 30px; }
 .logo-wall img[src$="nexla.webp"] { max-height: 30px; }
+
+/* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
+.logo-wall img[src$="sparrow.png"] { max-height: 79px; }
