@@ -24,25 +24,27 @@ img { max-width: 100%; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 150;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 clamp(1.25rem, 4vw, 3rem); height: 76px;
-  background: rgba(255,255,255,0.86); backdrop-filter: var(--surface-blur);
+  background: rgba(255,255,255,0.9); backdrop-filter: var(--surface-blur);
   -webkit-backdrop-filter: var(--surface-blur);
   border-bottom: 1px solid var(--slw-gray-200);
 }
 .site-header .logo { display: flex; align-items: center; }
-.site-header .logo img { height: 30px; mix-blend-mode: multiply; }
-.nav { display: flex; align-items: center; gap: clamp(0.5rem, 2vw, 2rem); }
+.site-header .logo img { height: 32px; width: auto; display: block; }
+.nav { display: flex; align-items: center; gap: 0; }
 .nav-item { position: relative; }
 .nav-link {
-  display: inline-flex; align-items: center; gap: 6px; padding: 26px 4px;
-  font-size: 0.9rem; font-weight: var(--weight-semibold); letter-spacing: 0.01em;
-  color: var(--slw-slate); cursor: pointer; background: none; border: 0;
+  display: inline-flex; align-items: center; gap: 5px; padding: 26px clamp(0.6rem, 1.15vw, 1.05rem);
+  font-size: 0.875rem; font-weight: var(--weight-semibold); letter-spacing: 0.015em;
+  color: var(--slw-ink); cursor: pointer; background: none; border: 0;
   font-family: inherit; white-space: nowrap;
 }
-.nav-link:hover, .nav-item.active > .nav-link { color: var(--slw-blue); }
-.nav-link .caret { width: 9px; height: 9px; transition: transform var(--dur-base) var(--ease-out); }
+.nav-link:hover, .nav-item.active > .nav-link { color: var(--slw-blue-mid); }
+.nav-item.active > .nav-link { font-weight: var(--weight-semibold); }
+.nav-link .caret { width: 8px; height: 8px; opacity: 0.45; transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out); }
+.nav-link:hover .caret, .nav-item.open .caret, .nav-item.active .caret { opacity: 1; }
 .nav-item.open .nav-link .caret { transform: rotate(180deg); }
 .nav-item.active > .nav-link::after {
-  content: ""; position: absolute; left: 4px; right: 4px; bottom: 20px; height: 2px; background: var(--slw-blue);
+  content: ""; position: absolute; left: clamp(0.6rem, 1.15vw, 1.05rem); right: clamp(0.6rem, 1.15vw, 1.05rem); bottom: 20px; height: 1.5px; border-radius: 1px; background: var(--slw-blue-mid);
 }
 .dropdown {
   position: absolute; top: 68px; left: 50%; transform: translateX(-50%) translateY(8px);
@@ -52,14 +54,14 @@ img { max-width: 100%; }
 }
 .nav-item:hover .dropdown, .nav-item.open .dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .dropdown a { display: block; padding: 11px 14px; border-radius: var(--radius-md);
-  font-size: 0.875rem; font-weight: var(--weight-semibold); color: var(--slw-blue); }
-.dropdown a:hover { background: var(--slw-blue-mist); color: var(--slw-blue-navy); }
+  font-size: 0.9rem; font-weight: var(--weight-semibold); color: var(--slw-ink); }
+.dropdown a:hover { background: var(--slw-blue-mist); color: var(--slw-blue-mid); font-weight: var(--weight-semibold); }
 .nav-cta {
-  padding: 11px 22px; border-radius: var(--radius-pill); background: var(--slw-blue);
-  color: #fff !important; font-size: 0.875rem; font-weight: var(--weight-semibold);
+  margin-left: clamp(0.75rem, 1.6vw, 1.5rem); padding: 11px 22px; border-radius: var(--radius-pill); background: var(--slw-blue-mid);
+  color: #fff !important; font-size: 0.875rem; font-weight: var(--weight-semibold); letter-spacing: 0.015em;
   transition: background var(--dur-base) var(--ease-out);
 }
-.nav-cta:hover { background: var(--slw-blue-ocean); color: #fff !important; }
+.nav-cta:hover { background: var(--slw-blue-navy); color: #fff !important; }
 .nav-toggle { display: none; }
 @media (max-width: 1080px) {
   .nav { position: fixed; inset: 76px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0;
@@ -96,9 +98,9 @@ main { display: block; }
 .page-hero .lead { max-width: 60ch; }
 
 /* ============ COPY ============ */
-.kicker { display: inline-flex; align-items: center; gap: 10px; font-size: var(--text-kicker);
+.kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 1.0625rem;
   font-weight: var(--weight-semibold); letter-spacing: var(--tracking-kicker); text-transform: uppercase;
-  color: var(--slw-blue); margin: 0 0 20px; }
+  color: var(--slw-blue-mid); margin: 0 0 22px; }
 .kicker .kmark { width: 30px; height: 12px; overflow: visible; flex: none; }
 .kicker .kmark path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round;
   vector-effect: non-scaling-stroke; transform: scaleY(0.04); transform-box: fill-box; transform-origin: center;
@@ -108,16 +110,18 @@ h1.head { font-size: var(--text-display-xl); }
 h2.head { font-size: var(--text-display-lg); }
 h3.head { font-size: var(--text-display-md); }
 .head { font-weight: var(--weight-light); line-height: var(--leading-snug); letter-spacing: var(--tracking-tight);
-  color: var(--slw-slate); margin: 0 0 22px; text-wrap: balance; }
-.head em { font-style: normal; font-weight: var(--weight-semibold); color: var(--slw-blue); }
-.lead { font-size: var(--text-lead); line-height: var(--leading-normal); color: var(--text-secondary);
-  font-weight: var(--weight-regular); max-width: 46ch; margin: 0 0 28px; }
+  color: var(--slw-ink); margin: 0 0 22px; text-wrap: balance; }
+.head em, .head strong { font-style: normal; font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+.lead { font-size: var(--lead-size); line-height: 1.6; color: var(--slw-ink);
+  font-weight: var(--weight-light); max-width: 48ch; margin: 0 0 30px; }
 .prose { max-width: 68ch; }
-.prose p { font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--text-secondary); margin: 0 0 20px; }
-.prose strong { color: var(--slw-slate); font-weight: var(--weight-semibold); }
-.cta { display: inline-flex; align-items: center; gap: 10px; font-weight: var(--weight-semibold);
-  font-size: var(--text-small); letter-spacing: 0.02em; color: var(--slw-blue); }
-.cta svg { transition: transform var(--dur-base) var(--ease-out); }
+.prose p { font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--slw-ink); margin: 0 0 20px; }
+.prose strong { color: var(--slw-ink); font-weight: var(--weight-semibold); }
+.cta { display: inline-flex; align-items: center; gap: 9px; font-weight: var(--weight-semibold);
+  font-size: var(--text-small); letter-spacing: 0.02em; color: var(--slw-blue-mid);
+  transition: color var(--dur-base) var(--ease-out); }
+.cta:hover { color: var(--slw-blue-ocean); }
+.cta svg { position: relative; top: 1px; transition: transform var(--dur-base) var(--ease-out); }
 .cta:hover svg { transform: translateX(5px); }
 
 /* ============ REVEAL + GRAPHIC SYSTEM ============ */
@@ -161,7 +165,7 @@ h3.head { font-size: var(--text-display-md); }
 .pcard { background: #fff; border: var(--border-card); border-radius: var(--radius-lg); padding: 30px 28px; box-shadow: var(--shadow-sm); }
 .pcard .motif { width: 120px; height: 60px; display: block; overflow: visible; }
 .pcard h3 { font-size: var(--text-title); font-weight: var(--weight-semibold); color: var(--slw-slate); margin: 16px 0 10px; }
-.pcard p { font-size: var(--text-small); line-height: var(--leading-normal); color: var(--text-secondary); margin: 0; }
+.pcard p { font-size: var(--text-small); line-height: var(--leading-normal); color: var(--slw-ink); margin: 0; }
 
 .tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { font-size: var(--text-caption); font-weight: var(--weight-semibold); letter-spacing: 0.04em;
@@ -186,18 +190,18 @@ h3.head { font-size: var(--text-display-md); }
 .icard .arrow { margin-top: 22px; color: var(--slw-blue); display: inline-flex; }
 
 .callout { display: flex; gap: clamp(1.5rem, 4vw, 3rem); flex-wrap: wrap; margin: 4px 0 30px; padding: 22px 28px; background: var(--slw-blue-mist); border-radius: var(--radius-lg); }
-.callout .cn { font-size: 1.8rem; font-weight: var(--weight-light); color: var(--slw-blue-navy); line-height: 1; }
-.callout .cn b { font-weight: var(--weight-semibold); color: var(--slw-blue); }
-.callout .cl { font-size: var(--text-caption); color: var(--text-secondary); margin-top: 7px; max-width: 18ch; }
+.callout .cn { font-size: 1.8rem; font-weight: var(--weight-light); color: var(--slw-ink); line-height: 1; }
+.callout .cn b { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+.callout .cl { font-size: var(--text-caption); color: var(--slw-ink); margin-top: 7px; max-width: 18ch; }
 
 /* reusable soft CTA box (e.g. "explore case studies") */
 .cta-box { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
   padding: 24px 30px; background: var(--slw-blue-mist); border-radius: var(--radius-lg); color: var(--slw-slate);
   transition: background var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
 .cta-box:hover { background: var(--slw-blue-pale); color: var(--slw-slate); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.cta-box .eyebrow { font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.14em; font-weight: var(--weight-semibold); color: var(--slw-blue); margin-bottom: 6px; }
-.cta-box .t { font-size: var(--text-title); font-weight: var(--weight-regular); color: var(--slw-slate); line-height: var(--leading-snug); }
-.cta-box .arrow { color: var(--slw-blue); flex: none; display: inline-flex; transition: transform var(--dur-base) var(--ease-out); }
+.cta-box .eyebrow { font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.14em; font-weight: var(--weight-semibold); color: var(--slw-blue-mid); margin-bottom: 6px; }
+.cta-box .t { font-size: var(--text-title); font-weight: var(--weight-regular); color: var(--slw-ink); line-height: var(--leading-snug); }
+.cta-box .arrow { color: var(--slw-blue-mid); flex: none; display: inline-flex; transition: transform var(--dur-base) var(--ease-out); }
 .cta-box:hover .arrow { transform: translateX(5px); }
 
 .tf { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 26px; }
@@ -205,9 +209,9 @@ h3.head { font-size: var(--text-display-md); }
 @media (max-width: 820px) { .tf { grid-template-columns: 1fr; } }
 .tf .col { padding: 20px 22px; border-radius: var(--radius-md); }
 .tf .today { background: var(--slw-blue-mist); } .tf .future { background: var(--slw-gray-100); }
-.tf .lab { font-size: var(--text-kicker); text-transform: uppercase; letter-spacing: 0.14em; font-weight: var(--weight-semibold); color: var(--slw-blue); margin-bottom: 8px; }
-.tf .future .lab { color: var(--slw-slate); }
-.tf p { margin: 0; font-size: var(--text-small); color: var(--text-secondary); line-height: var(--leading-normal); }
+.tf .lab { font-size: var(--text-kicker); text-transform: uppercase; letter-spacing: 0.14em; font-weight: var(--weight-semibold); color: var(--slw-blue-mid); margin-bottom: 8px; }
+.tf .future .lab { color: var(--slw-ink); }
+.tf p { margin: 0; font-size: var(--text-small); color: var(--slw-ink); line-height: var(--leading-normal); }
 .tf .outcome { background: var(--slw-blue-navy); position: relative; }
 @media (max-width: 980px) { .tf .outcome { grid-column: 1 / -1; } }
 .tf .outcome .lab { color: var(--slw-blue-sky); display: flex; align-items: center; gap: 6px; }
@@ -219,9 +223,9 @@ h3.head { font-size: var(--text-display-md); }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); }
 @media (max-width: 820px) { .grid-3 { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
 .vcard { background: #fff; border: var(--border-card); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); }
-.vcard .n { font-size: 1.6rem; font-weight: var(--weight-light); color: var(--slw-blue); }
-.vcard h3 { font-size: var(--text-title); font-weight: var(--weight-semibold); color: var(--slw-slate); margin: 8px 0 10px; }
-.vcard p { font-size: var(--text-small); line-height: var(--leading-normal); color: var(--text-secondary); margin: 0; }
+.vcard .n { font-size: 1.6rem; font-weight: var(--weight-light); color: var(--slw-blue-mid); }
+.vcard h3 { font-size: var(--text-title); font-weight: var(--weight-semibold); color: var(--slw-ink); margin: 8px 0 10px; }
+.vcard p { font-size: var(--text-small); line-height: var(--leading-normal); color: var(--slw-ink); margin: 0; }
 
 /* people */
 .people { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 2rem); }
@@ -250,21 +254,21 @@ h3.head { font-size: var(--text-display-md); }
   border-radius: var(--radius-md); font-family: inherit; font-size: var(--text-body); color: var(--slw-slate); background: #fff; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--slw-blue); box-shadow: 0 0 0 3px var(--focus-ring); }
 .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: var(--radius-pill);
-  background: var(--slw-blue); color: #fff; font-weight: var(--weight-semibold); border: 0; font-family: inherit;
+  background: var(--slw-blue-mid); color: #fff; font-weight: var(--weight-semibold); border: 0; font-family: inherit;
   font-size: var(--text-small); cursor: pointer; transition: background var(--dur-base) var(--ease-out); }
-.btn:hover { background: var(--slw-blue-ocean); color: #fff; }
+.btn:hover { background: var(--slw-blue-navy); color: #fff; }
 
 /* ============ FOOTER ============ */
-.site-footer { background: var(--slw-near-black); color: rgba(255,255,255,0.66); padding: clamp(3rem,6vw,5rem) 0 2.5rem; }
+.site-footer { background: var(--slw-navy-deep); color: rgba(255,255,255,0.74); padding: clamp(3.5rem,7vw,6rem) 0 2.5rem; }
 .site-footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; }
 @media (max-width: 820px) { .site-footer .wrap { grid-template-columns: 1fr 1fr; } }
-.site-footer h4 { color: #fff; font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.12em; font-weight: var(--weight-semibold); margin: 0 0 16px; }
-.site-footer a { display: block; color: rgba(255,255,255,0.66); font-size: var(--text-small); padding: 5px 0; }
+.site-footer h4 { color: #fff; font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.16em; font-weight: var(--weight-semibold); margin: 0 0 18px; }
+.site-footer a { display: block; color: rgba(255,255,255,0.74); font-size: var(--text-small); font-weight: var(--weight-light); padding: 6px 0; transition: color var(--dur-base) var(--ease-out); }
 .site-footer a:hover { color: #fff; }
-.site-footer .brand { font-size: 1.5rem; font-weight: var(--weight-semibold); color: #fff; letter-spacing: 0.04em; }
-.site-footer .tagline { font-size: var(--text-small); margin-top: 12px; max-width: 30ch; line-height: var(--leading-normal); }
-.site-footer .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.14); margin-top: 1.5rem; padding-top: 1.5rem;
-  font-size: var(--text-caption); color: rgba(255,255,255,0.45); }
+.site-footer .brand { font-size: 1.75rem; font-weight: var(--weight-bold); color: #fff; letter-spacing: 0.02em; }
+.site-footer .tagline { font-size: var(--text-small); font-weight: var(--weight-light); margin-top: 14px; max-width: 30ch; line-height: var(--leading-relaxed); color: rgba(255,255,255,0.78); }
+.site-footer .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.22); margin-top: 2rem; padding-top: 1.75rem;
+  font-size: var(--text-caption); font-weight: var(--weight-light); color: rgba(255,255,255,0.58); line-height: var(--leading-normal); }
 
 /* ============ FLOATING CTA (site-wide, bottom-right) ============ */
 .float-cta { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 140;
@@ -282,3 +286,226 @@ h3.head { font-size: var(--text-display-md); }
   letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
 .edge-rail:hover { background: var(--slw-blue-ocean); }
 @media (max-width: 900px) { .edge-rail { display: none; } }
+
+/* ============================================================
+   HOMEPAGE HERO
+   Matches the investor deck's typographic system: Proxima Nova
+   Light carries the line, Semibold marks the one phrase that
+   matters. Colour stays structural — the eyebrow, the CTA rule
+   and the diagram — so emphasis reads as weight, not hue,
+   exactly as it does on the slides.
+   ============================================================ */
+.panel.hero { align-items: center;
+  /* exactly one screen: the tinted section below must not show under the fold */
+  min-height: 100vh; min-height: 100dvh;
+  /* +4.75rem on top: the site header is position:fixed and overlays the hero,
+     so true centring has to discount the height it covers. */
+  padding-block: calc(clamp(5rem, 9vh, 7rem) + 4.75rem) clamp(5rem, 9vh, 7rem); }
+.hero-split { display: grid; grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(2rem, 4vw, 3.5rem); align-items: center; }
+
+/* deck-style outlined eyebrow */
+.eyebrow { display: inline-block; padding: 8px 18px 7px;
+  border: 1px solid var(--slw-blue-pale); border-radius: 999px;
+  font-size: var(--text-kicker); font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-kicker); text-transform: uppercase;
+  color: var(--slw-blue); background: var(--slw-white); margin: 0 0 30px; }
+
+.hero-head { font-size: clamp(2.2rem, 3.6vw, 3.1rem); font-weight: var(--weight-light);
+  line-height: 1.14; letter-spacing: -0.022em; color: var(--slw-ink);
+  margin: 0 0 24px; }
+.hero-head strong { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+
+.hero-lead { font-size: var(--lead-size); font-weight: var(--weight-light);
+  line-height: 1.62; color: var(--slw-ink); max-width: 44ch; margin: 0 0 34px; }
+.hero-lead strong { font-weight: var(--weight-semibold); }
+
+.hero-cta { display: inline-flex; align-items: center; gap: 9px;
+  font-size: var(--text-small); font-weight: var(--weight-semibold);
+  letter-spacing: 0.02em; color: var(--hero-accent);
+  transition: color var(--dur-base) var(--ease-out); }
+.hero-cta:hover { color: var(--slw-blue-ocean); }
+.hero-cta svg { position: relative; top: 1px; /* shaft sits between the cap-height and x-height centres */
+  transition: transform var(--dur-base) var(--ease-out); }
+.hero-cta:hover svg { transform: translateX(5px); }
+
+@media (max-width: 900px) {
+  .hero-split { grid-template-columns: 1fr; gap: 2.75rem; }
+  .panel.hero { padding-block: clamp(4.5rem, 10vh, 6rem) 3rem; }
+  .hero-lead { max-width: 100%; }
+}
+
+/* Phase labels under the hero chart — set like the deck's section heads
+   ("ORIGINAL INVESTMENT" / "FOLLOW ON"): wide tracking, regular weight, ink. */
+.lbl-phase { font-family: var(--font-sans); font-size: 11px; font-weight: var(--weight-regular);
+  text-transform: uppercase; letter-spacing: 0.18em; fill: var(--slw-ink); }
+
+/* Touchpoint marks, set like the SLW wordmark: heavier, tight, logo blue. */
+.lbl-slw { font-family: var(--font-sans); font-size: 13px; font-weight: var(--weight-bold);
+  letter-spacing: 0.01em; fill: var(--slw-blue); }
+
+/* ============================================================
+   BY THE NUMBERS
+   Open three-up, no rules — the figures carry it. No tabular
+   figures here on purpose: Proxima pads a "1" by ~76% of its
+   width to match a "0", which opens a visible gap in "$1.5B".
+   The count-up jitters very slightly without them; the gap at
+   rest is the worse of the two.
+   ============================================================ */
+.section-eyebrow { font-size: 1.0625rem; font-weight: var(--weight-semibold);
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--slw-blue-mid);
+  margin: 0 0 22px; }
+.section-lead { font-size: var(--lead-size); font-weight: var(--weight-light);
+  line-height: 1.6; color: var(--slw-ink); max-width: 72ch; margin: 0; text-wrap: balance; }
+.section-lead strong { font-weight: var(--weight-semibold); }
+
+.stats-band { display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem); margin-top: clamp(3.25rem, 6vw, 5rem); }
+.stats-band .stat .fig-num { font-size: var(--text-stat); line-height: 1; letter-spacing: -0.025em; }
+.stats-band .stat .fig-num b { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+.stats-band .stat .fig-lbl { margin-top: 12px; font-size: var(--text-body);
+  font-weight: var(--weight-regular); color: var(--slw-ink); line-height: 1.5; }
+
+@media (max-width: 720px) { .stats-band { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* Both lead paragraphs — hero and section — read from one value so they
+   can't drift apart. Bumped up from 1.3125rem. */
+:root { --lead-size: clamp(1.1875rem, 1.4vw, 1.375rem); }
+
+/* Accent for the hero and the stats band. One line switches every
+   blue in both sections:
+     var(--slw-blue)      #0093D0  logo blue — the "no innovation" emphasis
+     var(--slw-blue-mid)  #297DB3  the deeper mid blue
+   ------------------------------------------------------------ */
+:root { --hero-accent: var(--slw-blue); }
+
+/* ============================================================
+   SECTION FORMATTING
+   Same system as the hero and the stats band: Light carries the
+   line, Semibold marks the phrase that matters, colour stays
+   structural. The hero uses the bright logo blue; everything
+   below it uses the deeper #297DB3.
+   ============================================================ */
+.section-head { font-size: clamp(1.9rem, 3.1vw, 2.6rem); font-weight: var(--weight-light);
+  line-height: 1.16; letter-spacing: -0.02em; color: var(--slw-ink); margin: 0 0 22px; }
+.section-head em, .section-head strong { font-style: normal;
+  font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+
+.section-cta { display: inline-flex; align-items: center; gap: 9px;
+  font-size: var(--text-small); font-weight: var(--weight-semibold);
+  letter-spacing: 0.02em; color: var(--slw-blue-mid);
+  transition: color var(--dur-base) var(--ease-out); }
+.section-cta:hover { color: var(--slw-blue-ocean); }
+.section-cta svg { position: relative; top: 1px;
+  transition: transform var(--dur-base) var(--ease-out); }
+.section-cta:hover svg { transform: translateX(5px); }
+
+/* section lead inside a split column needs a tighter measure than a full-width one */
+.split .section-lead, .copy .section-lead { max-width: 46ch; }
+.copy .section-lead { margin-bottom: 30px; }
+
+
+/* Problem section: the diagram is the point, so it takes the wider column. */
+.split.split-figwide { grid-template-columns: 1.18fr 0.82fr; }
+
+/* ------------------------------------------------------------
+   A/B/Cs diagram — slide 9 of the 3.24.26 deck, rendered.
+   viewBox units are the slide image's own pixels.
+   ------------------------------------------------------------ */
+.abc-fig text { font-family: var(--font-sans); }
+.abc-ring  { font-size: 22px; font-weight: var(--weight-regular); fill: var(--slw-ink); letter-spacing: 0.01em; }
+.abc-pct   { font-size: 32px; font-weight: var(--weight-regular); fill: var(--slw-ink); }
+.abc-repeat{ font-size: 31px; font-weight: var(--weight-bold);    fill: #0897A2; letter-spacing: 0.01em; }
+.abc-round { font-size: 36px; font-weight: var(--weight-bold);    fill: #fff; }
+.abc-exit  { font-size: 30px; font-weight: var(--weight-bold);    fill: #fff; letter-spacing: 0.01em; }
+.abc-phase { font-size: 26px; font-weight: var(--weight-regular); fill: var(--slw-ink); letter-spacing: 0.12em; }
+.abc-tag   { font-size: 14px; font-weight: var(--weight-bold);    fill: var(--slw-ink); }
+
+/* ------------------------------------------------------------
+   Flex cost-of-capital chart — slide 14 of the 3.24.26 deck.
+   ------------------------------------------------------------ */
+.flex-fig text { font-family: var(--font-sans); }
+.flex-ytick  { font-size: 24px; font-weight: var(--weight-semibold); fill: var(--slw-ink); }
+.flex-xtick  { font-size: 24px; font-weight: var(--weight-regular);  fill: var(--slw-gray-500); }
+.flex-axis   { font-size: 31px; font-weight: var(--weight-semibold); fill: var(--slw-ink); }
+.flex-point  { font-size: 27px; font-weight: var(--weight-regular);  fill: var(--slw-gray-700); }
+.flex-end    { font-size: 26px; font-weight: var(--weight-semibold); fill: var(--slw-ink); }
+.flex-glyph  { font-size: 38px; font-weight: var(--weight-bold); font-style: italic; fill: #fff; }
+.flex-note   { font-size: 23px; font-weight: var(--weight-semibold); fill: var(--slw-slate); letter-spacing: 0.02em; }
+.flex-savings{ font-size: 15px; font-weight: var(--weight-semibold); fill: #fff; letter-spacing: 0.14em; }
+
+/* ============================================================
+   SELECT PORTFOLIO
+   An open wall rather than a boxed grid. Fifteen marks fill three
+   rows of five exactly, so there is no ragged last row. They keep
+   their own colours; hover lifts and softens them slightly so the
+   grid still responds to the pointer.
+   ============================================================ */
+.port-head { display: grid; grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
+.port-stat { max-width: 40ch; margin: 0; }
+.port-stat strong { font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
+@media (max-width: 880px) { .port-head { grid-template-columns: 1fr; align-items: start; gap: 1.5rem; } }
+
+.logo-wall { list-style: none; margin: 0; padding: 0; display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(2.5rem, 4.5vw, 4rem) clamp(2rem, 3.5vw, 3.25rem); }
+.logo-wall li { display: flex; align-items: center; justify-content: center; }
+.logo-wall a { display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 64px; border-radius: var(--radius-sm); }
+.logo-wall img { max-width: 88%; max-height: 54px; object-fit: contain;
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out); }
+.logo-wall a:hover img, .logo-wall a:focus-visible img { transform: translateY(-4px); opacity: .82; }
+
+/* reveal sweeps column by column rather than all at once */
+[data-animate] .logo-wall li { opacity: 0; transform: translateY(10px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+[data-animate].in .logo-wall li { opacity: 1; transform: none; }
+.logo-wall li:nth-child(5n+1) { transition-delay: 0ms }
+.logo-wall li:nth-child(5n+2) { transition-delay: 70ms }
+.logo-wall li:nth-child(5n+3) { transition-delay: 140ms }
+.logo-wall li:nth-child(5n+4) { transition-delay: 210ms }
+.logo-wall li:nth-child(5n+5) { transition-delay: 280ms }
+
+@media (max-width: 1040px) { .logo-wall { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px)  { .logo-wall { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .logo-wall li { transition: none; transition-delay: 0s !important; } }
+
+/* These files differ wildly in how much of their canvas the mark actually fills
+   — 22% for Nex, 33% for Postscript, 100% for UJET — so one max-height renders
+   some as specks and others oversized. Measured the ink in each and tuned the
+   cap per file so every mark lands near 30px of visible height. */
+/* Cap tuned per file against its measured ink ratio — the share of the canvas
+   the mark actually fills, which runs from 22% (Nex) to 100% (Hammerspace).
+   A single max-height renders some as specks and others oversized. */
+.logo-wall img[src$="nex.png"]        { max-height: 130px; }
+.logo-wall img[src$="postscript.png"] { max-height: 94px; }
+.logo-wall img[src$="hypr.png"]       { max-height: 79px; }
+.logo-wall img[src$="verkada.png"]    { max-height: 64px; }
+.logo-wall img[src$="alembic.png"]    { max-height: 56px; }
+.logo-wall img[src$="wander.png"]     { max-height: 56px; }
+.logo-wall img[src$="netomi.png"]     { max-height: 53px; }
+.logo-wall img[src$="ujet.png"]       { max-height: 34px; }
+.logo-wall img[src$="bonusly.png"]    { max-height: 34px; }
+.logo-wall img[src$="paragon.png"]    { max-height: 34px; }
+.logo-wall img[src$="tapcart.png"]    { max-height: 34px; }
+.logo-wall img[src$="rinsed.jpg"]     { max-height: 34px; }
+
+/* Closing CTA is centred, so its lead needs to centre too rather than
+   inherit the left-aligned measure the split columns use. */
+.section-mist .section-lead { margin-left: auto; margin-right: auto; max-width: 54ch; }
+
+/* ============================================================
+   SITE-WIDE SYSTEM
+   The global .kicker / .head / .lead / .cta classes carry the
+   treatment built on the homepage, so every page inherits it.
+   ============================================================ */
+.kicker .kmark { display: none; }
+.lead strong { font-weight: var(--weight-semibold); }
+/* the boxed grid used on portfolio pages: drop the cell borders and the
+   desaturation so it reads like the homepage wall */
+.logo-grid { gap: clamp(1.75rem, 3vw, 2.75rem); background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.logo-grid .cell { background: transparent; aspect-ratio: auto; padding: 8px 0; min-height: 64px; }
+.logo-grid img { max-height: 40px; max-width: 86%; }
+[data-animate].in .logo-grid img { opacity: 1; }

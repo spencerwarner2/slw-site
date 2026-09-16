@@ -22,12 +22,11 @@
     { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html', children: [
       { label: 'Case Studies', href: 'case-studies.html', key: 'case-studies' }
     ]},
-    { key: 'insights', label: 'Media & Insights', href: 'insights.html' },
     { key: 'contact', label: 'Contact', href: 'contact.html' }
   ];
   // which top-level owns the current page
   var OWNER = { 'our-approach':'what','flex-capital':'what','why-slw':'what','about':'firm','people':'firm','values':'firm',
-    'portfolio':'portfolio','case-studies':'portfolio','insights':'insights','contact':'contact' };
+    'portfolio':'portfolio','case-studies':'portfolio','contact':'contact' };
 
   var caret = '<svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -77,7 +76,7 @@
       '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
       '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="flex-capital.html">Flex Capital</a><a href="why-slw.html">Why SLW</a><a href="portfolio.html">Portfolio</a></div>' +
       '<div><h4>Our Firm</h4><a href="about.html">About Us</a><a href="people.html">Our People</a><a href="values.html">Our Values</a></div>' +
-      '<div><h4>More</h4><a href="insights.html">Media &amp; Insights</a><a href="case-studies.html">Case Studies</a><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
+      '<div><h4>More</h4><a href="case-studies.html">Case Studies</a><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
       '<div class="legal">© ' + new Date().getFullYear() + ' Silver Lake Waterman. Proprietary &amp; confidential. Prototype site, copy from the SLW website draft. <a href="disclosures.html" style="color:inherit;text-decoration:underline">Disclosures</a></div>' +
     '</div>';
     document.body.appendChild(f);
@@ -125,6 +124,19 @@
       });
     }, { threshold: 0.28, rootMargin: '0px 0px -6% 0px' });
     animated.forEach(function (el) { io.observe(el); });
+    // Safety net: IntersectionObserver callbacks are suppressed while a document is
+    // hidden (background tab, bfcache restore, prerender). If a section is already in
+    // view and the observer has not fired, reveal it rather than leave it blank.
+    function revealVisible() {
+      animated.forEach(function (el) {
+        if (el.classList.contains('in')) return;
+        var r = el.getBoundingClientRect();
+        if (r.top < innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); el.querySelectorAll('[data-count]').forEach(runCount); }
+      });
+    }
+    setTimeout(revealVisible, 400);
+    window.addEventListener('scroll', revealVisible, { passive: true });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) revealVisible(); });
   }
 
   /* ---- scroll bar ---- */
@@ -140,7 +152,7 @@
     a.className = 'float-cta';
     a.href = 'case-studies.html';
     a.innerHTML = 'Case Studies' +
-      '<svg width="16" height="11" viewBox="0 0 18 12" fill="none"><path d="M1 6h15m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      '<svg width="16" height="8" viewBox="0 0 16 8" fill="none" aria-hidden="true"><path d="M0 4h14m0 0-3.3-3.3M14 4l-3.3 3.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     document.body.appendChild(a);
   }
 
