@@ -64,8 +64,7 @@
     var f = document.createElement('footer');
     f.className = 'site-footer';
     f.innerHTML = '<div class="wrap">' +
-      '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div>' +
-        '<div class="where">San Francisco, CA<br><a href="mailto:info@slw.vc">info@slw.vc</a></div></div>' +
+      '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
       '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="portfolio.html">Portfolio</a></div>' +
       '<div><h4>Our Firm</h4><a href="about.html">About Us</a></div>' +
       '<div><h4>More</h4><a href="case-studies.html">Case Studies</a><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +

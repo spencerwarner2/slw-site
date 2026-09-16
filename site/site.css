@@ -551,34 +551,3 @@ h3.head { font-size: var(--text-display-md); }
 /* REVENUE is an axis label, not a figure: much smaller than the deck sets it,
    tracked like the site's other small caps, and on the figures' own baseline. */
 .stage-rev      { font-size: 16px; font-weight: var(--weight-semibold); letter-spacing: 1.92px; }
-
-/* ------------------------------------------------------------
-   "Welcome to Lifecycle Capital" — rebuilt from the graphic on the
-   live site (slw.vc/img/lifecycle.png, 1274x600). Centres, radii,
-   colours, dash and type sizes are measured off that image, so one
-   viewBox unit is one of its pixels.
-   ------------------------------------------------------------ */
-.lc-wrap { max-width: 880px; margin: 26px auto 0; }
-.lc-fig text { font-family: var(--font-sans); }
-.lc-mark { font-size: 60px;   font-weight: var(--weight-bold);     fill: #fff; }
-.lc-head { font-size: 32px;   font-weight: var(--weight-semibold); fill: #2F2F2F; }
-.lc-body { font-size: 27.7px; font-weight: var(--weight-regular);  fill: var(--slw-ink); }
-
-/* the "Ideal for" note that closes each product card */
-.pcard .ideal { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--slw-gray-200);
-  font-size: var(--text-caption); color: var(--slw-gray-700); line-height: var(--leading-normal); }
-.pcard .ideal span { display: block; margin-bottom: 4px; text-transform: uppercase;
-  letter-spacing: 0.12em; font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
-
-/* the three columns of "one and done" carry lists rather than prose */
-.tf ul { list-style: none; margin: 0; padding: 0; }
-.tf li { font-size: var(--text-small); color: var(--slw-ink); line-height: var(--leading-normal);
-  padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
-.tf li:last-child { border-bottom: 0; }
-.tf .outcome li { color: var(--slw-white); border-bottom-color: rgba(255,255,255,0.16); }
-.tf .ticks li::before { content: '\2713'; margin-right: 8px; color: var(--slw-blue-sky); font-weight: var(--weight-semibold); }
-
-/* location and address, as the live site's footer carries them */
-.site-footer .where { margin-top: 14px; font-size: var(--text-caption); line-height: 1.7; color: rgba(255,255,255,0.6); }
-.site-footer .where a { color: inherit; }
-.site-footer .where a:hover { color: #fff; }
