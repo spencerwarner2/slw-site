@@ -25,7 +25,10 @@
   --radius-pill: 999px;
 
   /* ---- Layout ---- */
-  --container-max: 1200px;
+  /* The measure every band of the site shares: the header, the hero panels and
+     .wrap all resolve to the same 1200px of content inside the gutter. */
+  --container-max: 1328px;
+  --container-gutter: clamp(1.25rem, 5vw, 4rem); /* @kind spacing */
   --container-wide: 1440px;
   --container-text: 68ch;              /* @kind spacing */
   --gutter: clamp(1.25rem, 5vw, 5rem); /* @kind spacing */

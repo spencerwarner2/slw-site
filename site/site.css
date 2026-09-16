@@ -40,7 +40,7 @@ img { max-width: 100%; }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 100%; width: 100%; max-width: var(--container-max); margin: 0 auto;
-  padding: 0 clamp(1.25rem, 5vw, 4rem);
+  padding: 0 var(--container-gutter);
 }
 .site-header .logo { display: flex; align-items: center; }
 .site-header .logo img { height: 30px; width: auto; display: block; }
@@ -89,7 +89,7 @@ img { max-width: 100%; }
 @media (max-width: 1080px) {
   .nav { position: fixed; inset: 76px 0 auto 0; flex-direction: column; align-items: stretch; gap: 0;
     background: #fff; border-bottom: 1px solid var(--slw-gray-200);
-    padding: 8px clamp(1.25rem, 5vw, 4rem) 24px;
+    padding: 8px var(--container-gutter) 24px;
     transform: translateY(-120%); transition: transform var(--dur-base) var(--ease-out); max-height: calc(100vh - 76px); overflow:auto; }
   .site-header.nav-open .nav { transform: none; }
   .nav-link { padding: 15px 0; font-size: 1rem; }
@@ -105,15 +105,16 @@ img { max-width: 100%; }
 
 /* ============ LAYOUT ============ */
 main { display: block; }
-.wrap { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4rem); }
+.wrap { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-gutter); }
 .section { padding: var(--section-pad-y) 0; }
 .section-tint { background: var(--surface-subtle); }
 .section-mist { background: linear-gradient(180deg, #fff 0%, var(--slw-blue-mist) 100%); }
 
 /* full-viewport hero + panels */
 .panel { position: relative; min-height: 92vh; display: flex; align-items: center;
-  padding: clamp(6rem, 10vh, 9rem) clamp(1.25rem, 8vw, 8rem) var(--section-pad-y); }
-.panel-inner { width: 100%; max-width: var(--container-max); margin: 0 auto; }
+  padding: clamp(6rem, 10vh, 9rem) 0 var(--section-pad-y); }
+.panel-inner { width: 100%; max-width: var(--container-max); margin: 0 auto;
+  padding: 0 var(--container-gutter); }
 .split { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .split.rev { grid-template-columns: 1.08fr 0.92fr; }
 .split.rev .copy { order: 2; }
@@ -727,3 +728,8 @@ h3.head { font-size: var(--text-display-md); }
 .logo-wall img[src$="popsugar.jpg"] { max-height: 58px; }
 .logo-wall img[src$="robin.png"] { max-height: 30px; }
 .logo-wall img[src$="snaplogic.png"] { max-height: 30px; }
+
+/* The last two without a cap. Both files are 100% ink, so the 88% width limit
+   was holding them down; at the wider measure it lets go and they need one. */
+.logo-wall img[src$="afresh.webp"] { max-height: 30px; }
+.logo-wall img[src$="nexla.webp"] { max-height: 30px; }
