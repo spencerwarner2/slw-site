@@ -294,16 +294,33 @@ h3.head { font-size: var(--text-display-md); }
 .btn:hover { background: var(--slw-blue-navy); color: #fff; }
 
 /* ============ FOOTER ============ */
-.site-footer { background: var(--slw-navy-deep); color: rgba(255,255,255,0.74); padding: clamp(3.5rem,7vw,6rem) 0 2.5rem; }
-.site-footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; }
-@media (max-width: 820px) { .site-footer .wrap { grid-template-columns: 1fr 1fr; } }
-.site-footer h4 { color: #fff; font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.16em; font-weight: var(--weight-semibold); margin: 0 0 18px; }
-.site-footer a { display: block; color: rgba(255,255,255,0.74); font-size: var(--text-small); font-weight: var(--weight-light); padding: 6px 0; transition: color var(--dur-base) var(--ease-out); }
+.site-footer { background: var(--slw-navy-deep); color: rgba(255,255,255,0.74);
+  padding: clamp(2.75rem,5vw,4.25rem) 0 1.75rem; }
+/* The columns size to their own content and sit together at the left, so the
+   block reads as one tight group rather than four columns stretched over the
+   full measure. The rule above the legal line still spans it. */
+.foot-top { display: grid; grid-template-columns: auto auto auto;
+  justify-content: start; gap: 2rem clamp(3rem, 6vw, 6rem); }
+.foot-brand { max-width: 26ch; }
+/* narrow: the brand takes a row of its own and the two link columns sit
+   side by side, rather than the whole thing stacking into a tall strip */
+@media (max-width: 720px) {
+  .foot-top { grid-template-columns: auto auto; gap: 1.75rem clamp(2.5rem, 12vw, 4rem); }
+  .foot-brand { grid-column: 1 / -1; }
+}
+.site-footer h4 { color: #fff; font-size: var(--text-caption); text-transform: uppercase;
+  letter-spacing: 0.16em; font-weight: var(--weight-semibold); margin: 0 0 12px; }
+.site-footer a { display: block; color: rgba(255,255,255,0.74); font-size: var(--text-small);
+  font-weight: var(--weight-light); padding: 4px 0; transition: color var(--dur-base) var(--ease-out); }
 .site-footer a:hover { color: #fff; }
-.site-footer .brand { font-size: 1.75rem; font-weight: var(--weight-bold); color: #fff; letter-spacing: 0.02em; }
-.site-footer .tagline { font-size: var(--text-small); font-weight: var(--weight-light); margin-top: 14px; max-width: 30ch; line-height: var(--leading-relaxed); color: rgba(255,255,255,0.78); }
-.site-footer .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,0.22); margin-top: 2rem; padding-top: 1.75rem;
-  font-size: var(--text-caption); font-weight: var(--weight-light); color: rgba(255,255,255,0.58); line-height: var(--leading-normal); }
+.site-footer .brand { font-size: 1.5rem; font-weight: var(--weight-bold); color: #fff;
+  letter-spacing: 0.02em; line-height: 1; }
+.site-footer .tagline { font-size: var(--text-small); font-weight: var(--weight-light);
+  margin-top: 12px; line-height: var(--leading-normal); color: rgba(255,255,255,0.72); }
+.site-footer .legal { border-top: 1px solid rgba(255,255,255,0.16);
+  margin-top: clamp(2rem, 3.5vw, 2.75rem); padding-top: 1.25rem;
+  font-size: var(--text-caption); font-weight: var(--weight-light);
+  color: rgba(255,255,255,0.5); line-height: var(--leading-normal); }
 
 /* ============ FLOATING CTA (site-wide, bottom-right) ============ */
 .float-cta { position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); z-index: 140;
@@ -613,17 +630,18 @@ h3.head { font-size: var(--text-display-md); }
   margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; }
 @media (max-width: 900px) { .person { flex-basis: calc((100% - 2 * var(--team-gap)) / 3); } }
 @media (max-width: 560px) { .person { flex-basis: calc((100% - var(--team-gap)) / 2); } }
-.person .avatar { display: block; width: 128px; max-width: 100%; aspect-ratio: 1; height: auto; margin: 0 auto;
+.person .avatar { display: block; width: 140px; max-width: 100%; aspect-ratio: 1; height: auto; margin: 0 auto;
   border-radius: 50%; background: var(--slw-gray-100); overflow: hidden;
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
 .person .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .person:hover .avatar { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .person:focus-visible .avatar { outline: 2px solid var(--slw-blue-mid); outline-offset: 3px; }
-.person .pn { display: block; margin-top: 17px; font-size: 0.9375rem;
+.person .pn { display: block; margin-top: 18px; font-size: 1rem;
   font-weight: var(--weight-semibold); color: var(--slw-ink); line-height: 1.35;
   letter-spacing: -0.004em; transition: color var(--dur-base) var(--ease-out); }
-.person .pr { display: block; margin-top: 3px; font-size: 0.8125rem; line-height: 1.45;
-  color: var(--slw-gray-700); }
+/* the role carries the brand navy, so it reads as a title rather than a caption */
+.person .pr { display: block; margin-top: 4px; font-size: 0.875rem; line-height: 1.45;
+  font-weight: var(--weight-medium); color: var(--slw-blue-navy); }
 /* a card opens a bio, so it answers on hover */
 .person:hover .pn { color: var(--slw-blue-mid); }
 

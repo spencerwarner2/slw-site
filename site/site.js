@@ -68,11 +68,14 @@
   function buildFooter() {
     var f = document.createElement('footer');
     f.className = 'site-footer';
+    // three columns, not four: the old "Our Firm" column held a single link,
+    // and the page names now match the ones in the nav
     f.innerHTML = '<div class="wrap">' +
-      '<div><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
-      '<div><h4>What We Do</h4><a href="our-approach.html">Our Approach</a><a href="portfolio.html">Portfolio</a></div>' +
-      '<div><h4>Our Firm</h4><a href="about.html">About Us</a></div>' +
-      '<div><h4>More</h4><a href="disclosures.html">Disclosures</a><a href="contact.html">Contact</a></div>' +
+      '<div class="foot-top">' +
+        '<div class="foot-brand"><div class="brand">SLW</div><div class="tagline">Flexible capital across the full company lifecycle.</div></div>' +
+        '<div><h4>Site</h4><a href="our-approach.html">Our Approach</a><a href="about.html">Our Firm</a><a href="portfolio.html">Our Portfolio</a></div>' +
+        '<div><h4>More</h4><a href="contact.html">Contact</a><a href="disclosures.html">Disclosures</a></div>' +
+      '</div>' +
       '<div class="legal">© ' + new Date().getFullYear() + ' Silver Lake Waterman. Proprietary &amp; confidential. Prototype site, copy from the SLW website draft. <a href="disclosures.html" style="color:inherit;text-decoration:underline">Disclosures</a></div>' +
     '</div>';
     document.body.appendChild(f);
