@@ -767,79 +767,99 @@ h3.head { font-size: var(--text-display-md); }
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
 
-/* ============ COMPARISON ============
-   Three columns sharing one template per row, so the rows can become cards on
-   a phone without a second markup path. The SLW column is a single tinted
-   panel: the hairlines that separate rows are drawn on the two plain columns
-   only, so the tint runs unbroken from the header to the last row. */
-.cmp { --cmp-cols: minmax(128px, 0.6fr) 1fr 1fr; }
-.cmp-intro { margin-bottom: clamp(2.25rem, 4vw, 3.25rem); }
-.cmp-intro .head { margin-bottom: 18px; }
-.cmp-intro .lead { margin-bottom: 0; max-width: 62ch; }
+/* ============ SLW AGAINST THE PLAYBOOK ============
+   No table chrome: type and one hairline do the work. Three columns share a
+   template per row so a phone can stack a row into a card without a second
+   markup path. The SLW column is a single wash running header to last row —
+   the hairlines are drawn on the other two columns only, so it stays whole. */
+.vs { --vs-cols: minmax(140px, 0.54fr) 1.1fr 1fr;
+  --vs-pad-y: clamp(1.5rem, 2.3vw, 2.15rem);
+  --vs-gut: clamp(1.25rem, 2.2vw, 2.25rem); }
+.vs-intro { margin-bottom: clamp(2.5rem, 4.5vw, 3.75rem); }
+.vs-intro .head { margin-bottom: 18px; }
+.vs-intro .lead { margin-bottom: 0; max-width: 60ch; }
 
-.cmp-row { display: grid; grid-template-columns: var(--cmp-cols); }
-.cmp-row > * { padding: clamp(1.15rem, 1.7vw, 1.6rem) clamp(1rem, 1.5vw, 1.45rem); }
-.cmp-row + .cmp-row > .cmp-dim,
-.cmp-row + .cmp-row > .cmp-alt { border-top: 1px solid var(--slw-gray-200); }
-.cmp-row + .cmp-row > .cmp-slw { box-shadow: inset 0 1px 0 rgba(25, 76, 133, 0.09); }
+.vs-row { display: grid; grid-template-columns: var(--vs-cols); }
+.vs-row > * { padding: var(--vs-pad-y) var(--vs-gut); }
+.vs-row > .vs-dim { padding-left: 0; }
+.vs-row > .vs-alt { padding-right: 0; }
+.vs-row + .vs-row > .vs-dim,
+.vs-row + .vs-row > .vs-alt { border-top: 1px solid var(--slw-gray-200); }
 
-.cmp-slw { background: var(--slw-blue-mist); }
-.cmp-head .cmp-slw { background: var(--slw-blue-mid);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-.cmp-row:last-child .cmp-slw { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+/* the wash, light enough to read as emphasis rather than a filled cell */
+.vs-slw { background: rgba(0, 147, 208, 0.045); }
+.vs-head .vs-slw { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.vs-row:last-child .vs-slw { border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
 
-/* the header sits on the baseline of the row so the two names line up */
-.cmp-head > * { display: flex; flex-direction: column; justify-content: flex-end; gap: 5px;
-  padding-top: clamp(1.5rem, 2.2vw, 2.1rem); padding-bottom: clamp(1.15rem, 1.7vw, 1.5rem); }
-.cmp-badge { align-self: flex-start; margin-bottom: 3px; padding: 4px 10px;
-  border-radius: var(--radius-pill); background: rgba(255,255,255,0.22); color: #fff;
+/* the two names sit on one baseline, each over its own short accent rule */
+.vs-head > * { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+  padding-top: 0; padding-bottom: clamp(1.1rem, 1.7vw, 1.5rem); }
+.vs-tag { margin-bottom: 10px; padding: 3px 10px; border-radius: var(--radius-pill);
+  border: 1px solid var(--slw-blue-pale); color: var(--slw-blue-mid); background: #fff;
   font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.14em;
   font-weight: var(--weight-semibold); }
-.cmp-name { font-size: var(--text-title); font-weight: var(--weight-semibold);
-  color: var(--slw-slate); line-height: 1.2; }
-.cmp-sub { font-size: var(--text-caption); font-weight: var(--weight-medium); color: var(--text-muted); }
-.cmp-head .cmp-slw .cmp-name { color: #fff; }
-.cmp-head .cmp-slw .cmp-sub { color: rgba(255,255,255,0.85); }
+.vs-name { font-size: clamp(1.15rem, 1.5vw, 1.4rem); font-weight: var(--weight-semibold);
+  color: var(--slw-navy-deep); line-height: 1.2; }
+.vs-head .vs-alt .vs-name { color: var(--slw-gray-500); font-weight: var(--weight-medium); }
+.vs-name::after { content: ""; display: block; width: 26px; height: 2px; border-radius: 1px;
+  margin: 11px 0 9px; background: var(--slw-blue); }
+.vs-head .vs-alt .vs-name::after { background: var(--slw-gray-300); }
+.vs-sub { font-size: var(--text-caption); font-weight: var(--weight-light); color: var(--text-muted); }
 
-/* the dimension reads as an eyebrow, the same treatment small labels get elsewhere */
-.cmp-dim { display: flex; align-items: center; font-size: 0.75rem;
-  text-transform: uppercase; letter-spacing: var(--tracking-kicker);
-  font-weight: var(--weight-semibold); color: var(--slw-navy-deep); }
-.cmp-slw, .cmp-alt { font-size: var(--text-small); line-height: var(--leading-normal);
-  color: var(--text-secondary); }
-.cmp-alt strong { color: var(--slw-slate); font-weight: var(--weight-semibold); }
-.cmp-slw strong { color: var(--slw-blue-navy); font-weight: var(--weight-semibold); }
-.cmp-slw .ck { display: inline-flex; margin-right: 7px; color: var(--slw-blue-mid); vertical-align: -2px; }
-.cmp-slw .ck svg { width: 15px; height: 15px; }
+/* left rail: the count, then the thing being compared */
+.vs-dim { display: flex; flex-direction: column; justify-content: center; gap: 7px; }
+.vs-no { font-size: 0.6875rem; letter-spacing: 0.18em; font-weight: var(--weight-semibold);
+  color: var(--slw-blue-sky); font-variant-numeric: tabular-nums; }
+.vs-label { font-size: 1.0625rem; font-weight: var(--weight-semibold);
+  color: var(--slw-navy-deep); line-height: 1.25; letter-spacing: -0.004em; }
 
-.cmp-note { margin: 18px 0 0; font-size: var(--text-caption);
-  font-weight: var(--weight-light); color: var(--slw-gray-500); max-width: 70ch; }
+.vs-slw, .vs-alt { font-size: var(--text-small); line-height: var(--leading-relaxed); }
+.vs-slw { color: var(--slw-ink); }
+.vs-slw strong { display: block; color: var(--slw-blue-navy); font-weight: var(--weight-semibold); }
+/* quieter than the SLW side, but still comfortably readable on its own */
+.vs-alt { color: var(--slw-gray-700); font-weight: var(--weight-regular); }
 
-/* rows arrive one after another, the way the logo wall sweeps its columns */
-[data-animate] .cmp-row { opacity: 0; transform: translateY(16px);
+.vs-note { margin: 20px 0 0; font-size: var(--text-caption); font-weight: var(--weight-light);
+  color: var(--slw-gray-400); max-width: 70ch; }
+
+/* rows arrive in sequence, the sweep the logo wall uses */
+[data-animate] .vs-row { opacity: 0; transform: translateY(14px);
   transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
-[data-animate].in .cmp-row { opacity: 1; transform: none; }
-.cmp-row:nth-child(1) { transition-delay: 0ms }
-.cmp-row:nth-child(2) { transition-delay: 70ms }
-.cmp-row:nth-child(3) { transition-delay: 140ms }
-.cmp-row:nth-child(4) { transition-delay: 210ms }
-.cmp-row:nth-child(5) { transition-delay: 280ms }
-.cmp-row:nth-child(6) { transition-delay: 350ms }
-.cmp-row:nth-child(7) { transition-delay: 420ms }
+[data-animate].in .vs-row { opacity: 1; transform: none; }
+.vs-row:nth-child(1) { transition-delay: 0ms }
+.vs-row:nth-child(2) { transition-delay: 70ms }
+.vs-row:nth-child(3) { transition-delay: 140ms }
+.vs-row:nth-child(4) { transition-delay: 210ms }
+.vs-row:nth-child(5) { transition-delay: 280ms }
+.vs-row:nth-child(6) { transition-delay: 350ms }
+.vs-row:nth-child(7) { transition-delay: 420ms }
 @media (prefers-reduced-motion: reduce) {
-  [data-animate] .cmp-row { opacity: 1; transform: none; transition: none; transition-delay: 0s !important; }
+  [data-animate] .vs-row { opacity: 1; transform: none; transition: none; transition-delay: 0s !important; }
 }
 
-/* a phone gets one card per dimension, each naming its two sides */
-@media (max-width: 760px) {
-  .cmp-head { display: none; }
-  .cmp-row { grid-template-columns: 1fr; margin-bottom: 14px; background: #fff;
-    border: 1px solid var(--slw-gray-200); border-radius: var(--radius-lg); overflow: hidden; }
-  .cmp-row > * { border-top: 0; box-shadow: none; padding: 15px 18px; }
-  .cmp-row .cmp-slw { border-radius: 0; }
-  .cmp-dim { background: var(--slw-navy-deep); color: #fff; font-size: 0.8125rem; }
-  .cmp-slw::before, .cmp-alt::before { content: attr(data-label); display: block; margin-bottom: 6px;
+/* two columns: the rail moves above the pair it labels */
+@media (max-width: 1000px) {
+  .vs { --vs-cols: 1.1fr 1fr; }
+  .vs-head .vs-dim { display: none; }
+  .vs-row > .vs-dim { grid-column: 1 / -1; padding: clamp(1.4rem,2.2vw,1.9rem) 0 0;
+    flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 12px; }
+  .vs-row > .vs-slw { padding-left: var(--vs-gut); }
+  /* the dimension row breaks the wash, so each band rounds on its own */
+  .vs-slw, .vs-head .vs-slw, .vs-row:last-child .vs-slw { border-radius: var(--radius-md); }
+  .vs-row + .vs-row > .vs-alt { border-top: 0; }
+  .vs-row + .vs-row > .vs-dim { border-top: 1px solid var(--slw-gray-200); }
+  .vs-head .vs-slw, .vs-head .vs-alt { padding-top: 0; }
+}
+
+/* a phone reads one side after the other, each named */
+@media (max-width: 680px) {
+  .vs { --vs-cols: 1fr; }
+  .vs-head { display: none; }
+  .vs-row > .vs-alt { padding: var(--vs-pad-y) var(--vs-gut); }
+  .vs-row > .vs-slw { border-radius: var(--radius-md) !important; }
+  .vs-row > .vs-dim { padding-bottom: 14px; }
+  .vs-slw::before, .vs-alt::before { content: attr(data-side); display: block; margin-bottom: 7px;
     font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.14em;
     font-weight: var(--weight-semibold); color: var(--slw-blue-mid); }
-  .cmp-alt::before { color: var(--slw-gray-500); }
+  .vs-alt::before { color: var(--slw-gray-400); }
 }
