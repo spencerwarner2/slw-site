@@ -27,6 +27,7 @@
   --slw-gray-50: #FAFAFA;
   --slw-white: #FFFFFF;
   --slw-near-black: #0A0E1A;  /* cover / dark section base */
+  --slw-navy-deep: #0B2647;   /* footer ground — deep navy, well below --slw-blue-navy */
 
   /* ---- Supporting accents (used sparingly in diagrams) ---- */
   --slw-amber: #FFB74D;       /* "Flex" / warm callout */
