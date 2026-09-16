@@ -7,3 +7,6 @@ Resources/
 
 # Scratch comparison harness for rebuilding graphics; not part of the site.
 _diff/
+
+# Staging folder of raw logo files; the wall reads from assets/portfolio/.
+assets/more portfolio/
