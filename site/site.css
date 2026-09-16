@@ -560,8 +560,10 @@ h3.head { font-size: var(--text-display-md); }
    The team. Faces are small and the type is centred under each
    one; a card opens that person's bio, the way slw.vc serves it.
    ------------------------------------------------------------ */
+/* The row of five fills the width exactly, so centring leaves it flush to
+   both edges and only pulls the short last row in under it. */
 .people { --team-gap: clamp(1.5rem, 2.9vw, 2.4rem);
-  display: flex; flex-wrap: wrap; justify-content: flex-start;
+  display: flex; flex-wrap: wrap; justify-content: center;
   gap: clamp(2.25rem, 3.8vw, 3.25rem) var(--team-gap); }
 /* five to a row, so nine sits as five over a centred four */
 .person { flex: 0 0 calc((100% - 4 * var(--team-gap)) / 5);
