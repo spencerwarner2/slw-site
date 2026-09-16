@@ -440,7 +440,8 @@ h3.head { font-size: var(--text-display-md); }
    their own colours; hover lifts and softens them slightly so the
    grid still responds to the pointer.
    ============================================================ */
-.port-head { display: grid; grid-template-columns: 1.15fr 0.85fr;
+/* an even split: at 0.85fr the stat fell 3px short of two lines at 1440 */
+.port-head { display: grid; grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end;
   margin-bottom: clamp(2.5rem, 5vw, 3.75rem); }
 .port-stat { max-width: 40ch; margin: 0; }
@@ -552,13 +553,8 @@ h3.head { font-size: var(--text-display-md); }
    The team. Faces are small and the type is centred under each
    one; a card opens that person's bio, the way slw.vc serves it.
    ------------------------------------------------------------ */
-/* the intro centres over the grid rather than hanging off the left */
-.team-intro { max-width: 37rem; margin: 0 auto clamp(2.75rem, 5vw, 4rem); text-align: center; }
-.team-intro .head { margin-bottom: 18px; }
-.team-intro .lead { margin: 0 auto; max-width: 30rem; }
-
 .people { --team-gap: clamp(1.5rem, 2.9vw, 2.4rem);
-  display: flex; flex-wrap: wrap; justify-content: center;
+  display: flex; flex-wrap: wrap; justify-content: flex-start;
   gap: clamp(2.25rem, 3.8vw, 3.25rem) var(--team-gap); }
 /* five to a row, so nine sits as five over a centred four */
 .person { flex: 0 0 calc((100% - 4 * var(--team-gap)) / 5);
