@@ -96,6 +96,9 @@ main { display: block; }
 /* page hero (shorter than homepage hero) */
 .page-hero { padding-top: clamp(8rem, 16vh, 12rem); padding-bottom: var(--section-pad-y); }
 .page-hero .lead { max-width: 60ch; }
+/* On the portfolio page the wall is the content, not a separate section, so
+   it sits nearer the line above it than a full section break would allow. */
+body[data-page="portfolio"] .page-hero { padding-bottom: clamp(2rem, 4vw, 3.75rem); }
 
 /* ============ COPY ============ */
 .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 1.0625rem;

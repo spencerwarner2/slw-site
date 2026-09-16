@@ -11,11 +11,11 @@
   var NAV = [
     { key: 'our-approach', label: 'Our Approach', href: 'our-approach.html' },
     { key: 'about', label: 'Our Firm', href: 'about.html' },
-    { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html' },
-    { key: 'contact', label: 'Contact', href: 'contact.html' }
+    { key: 'portfolio', label: 'Our Portfolio', href: 'portfolio.html' }
   ];
-  // which top-level owns the current page
-  var OWNER = { 'contact':'contact' };
+  // which top-level owns the current page; Contact has no nav item of its
+  // own, so nothing highlights there and the CTA carries it instead
+  var OWNER = {};
 
   var caret = '<svg class="caret" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
