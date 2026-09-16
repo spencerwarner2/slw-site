@@ -259,13 +259,25 @@ h3.head { font-size: var(--text-display-md); }
 
 
 /* timeline (history) */
-.tl { position: relative; padding-left: 28px; }
-.tl::before { content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: var(--slw-blue-pale); }
-.tl .ev { position: relative; padding: 0 0 34px; }
-.tl .ev::before { content: ""; position: absolute; left: -27px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--slw-blue); box-shadow: 0 0 0 4px var(--slw-blue-mist); }
-.tl .yr { font-weight: var(--weight-semibold); color: var(--slw-blue); font-size: var(--text-small); }
-.tl h3 { margin: 4px 0 6px; font-size: var(--text-title); font-weight: var(--weight-regular); color: var(--slw-slate); }
-.tl p { margin: 0; font-size: var(--text-small); color: var(--text-secondary); line-height: var(--leading-normal); max-width: 60ch; }
+/* The spine is drawn per event rather than down the whole column, so it ends
+   at the last dot instead of running on past Today into empty space. */
+.tl { position: relative; }
+.tl .ev { position: relative; padding: 0 0 38px 34px; }
+.tl .ev:last-child { padding-bottom: 0; }
+.tl .ev::before { content: ""; position: absolute; left: 0; top: 2px;
+  width: 13px; height: 13px; border-radius: 50%; background: var(--slw-blue);
+  box-shadow: 0 0 0 4px var(--slw-blue-mist); }
+/* starts clear of its own dot's ring and runs to the top of the next one */
+.tl .ev::after { content: ""; position: absolute; left: 5.5px; top: 24px; bottom: -2px;
+  width: 2px; background: var(--slw-blue-pale); }
+.tl .ev:last-child::after { content: none; }
+/* the same eyebrow treatment every other small blue label on the site gets */
+.tl .yr { font-weight: var(--weight-semibold); color: var(--slw-blue-mid);
+  font-size: 0.8125rem; letter-spacing: var(--tracking-kicker); text-transform: uppercase; }
+.tl h3 { margin: 7px 0 8px; font-size: var(--text-title);
+  font-weight: var(--weight-regular); color: var(--slw-slate); }
+.tl p { margin: 0; font-size: var(--text-small); color: var(--text-secondary);
+  line-height: var(--leading-normal); max-width: 56ch; }
 
 /* contact form */
 .form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 640px; }
