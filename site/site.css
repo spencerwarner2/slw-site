@@ -551,3 +551,8 @@ h3.head { font-size: var(--text-display-md); }
 /* REVENUE is an axis label, not a figure: much smaller than the deck sets it,
    tracked like the site's other small caps, and on the figures' own baseline. */
 .stage-rev      { font-size: 16px; font-weight: var(--weight-semibold); letter-spacing: 1.92px; }
+
+/* Headshots from slw.vc/team. They are palette PNGs already masked to a circle,
+   so the frame is a circle too and clips whatever ground each one carries. */
+.person .avatar:has(img) { border-radius: 50%; background: var(--slw-gray-100); overflow: hidden; }
+.person .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
