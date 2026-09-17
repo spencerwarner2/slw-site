@@ -791,23 +791,20 @@ h3.head { font-size: var(--text-display-md); }
    each. The figures take the blue the emphasis above them uses, and the
    labels take the deep navy at body size, so the pair reads bright figure
    over dark label rather than the other way round. */
-/* Even thirds put each rule right against the number after it and 270px from
-   the one before, because the numbers are left aligned and far narrower than
-   their column. So the columns size to their content instead and the dividers
-   are real items: space-between then splits the slack into four equal gaps,
-   which puts exactly the same air on both sides of every rule. */
-.section-figures .stats-band { display: flex; align-items: stretch;
-  justify-content: space-between; gap: 0; margin-top: clamp(2.75rem, 5vw, 4.25rem); }
+/* The columns size to their own content rather than to even thirds, so
+   space-between leaves the same gap between each pair — even thirds left the
+   figures drifting, since they are left aligned and far narrower than the
+   column they sat in. */
+.section-figures .stats-band { display: flex; align-items: flex-start;
+  justify-content: space-between; gap: clamp(2rem, 4vw, 4rem);
+  margin-top: clamp(2.75rem, 5vw, 4.25rem); }
 .section-figures .stats-band .stat { flex: 0 0 auto; }
-.section-figures .stats-band .stat-rule { flex: 0 0 1px; align-self: stretch;
-  background: var(--slw-navy-deep); }
 .section-figures .stats-band .fig-num,
 .section-figures .stats-band .fig-num b { color: var(--slw-blue-mid); }
 .section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: 1.125rem;
-  color: var(--slw-navy-deep); line-height: 1.5; max-width: 22ch; }
-/* stacked, the rules lie down and run the width */
+  font-weight: var(--weight-semibold); color: var(--slw-ink);
+  line-height: 1.5; max-width: 22ch; }
 @media (max-width: 720px) {
-  .section-figures .stats-band { flex-direction: column; gap: 1.75rem;
+  .section-figures .stats-band { flex-direction: column; gap: 2.25rem;
     justify-content: flex-start; }
-  .section-figures .stats-band .stat-rule { flex: 0 0 1px; width: 100%; }
 }
