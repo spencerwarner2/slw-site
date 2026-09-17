@@ -38,7 +38,7 @@
     }).join('');
     h.innerHTML =
       '<div class="header-inner">' +
-        '<a class="logo" href="index.html" aria-label="Silver Lake Waterman, home"><img src="../assets/logos/slw-mark.svg" alt="SLW" width="351" height="124"></a>' +
+        '<a class="logo" href="index.html" aria-label="Silver Lake Waterman, home"><span class="logo-type" aria-hidden="true">SLW</span></a>' +
         '<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>' +
         '<nav class="nav">' + itemsHtml +
           '<a class="nav-cta" href="contact.html">Start the conversation</a>' +

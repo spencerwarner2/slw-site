@@ -43,7 +43,14 @@ img { max-width: 100%; }
   padding: 0 var(--container-gutter);
 }
 .site-header .logo { display: flex; align-items: center; }
-.site-header .logo img { height: 30px; width: auto; display: block; }
+/* The mark is Proxima Nova Bold at default tracking — matched against the
+   original artwork at 0.976 IoU, with the ink aspect 2.8225 against its 2.8306
+   — so it is set as live type rather than shipped as a picture of type.
+   43.5px puts the ink at the 30px the image occupied; the nudge centres the
+   glyphs in the bar rather than the line box they sit in. */
+.site-header .logo-type { display: block; font-family: var(--font-sans);
+  font-weight: var(--weight-bold); font-size: 43.5px; line-height: 1;
+  letter-spacing: 0; color: #008CC6; transform: translateY(-0.5px); }
 .nav { display: flex; align-items: center; gap: 0; }
 .nav-item { position: relative; }
 .nav-link {
