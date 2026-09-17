@@ -791,21 +791,27 @@ h3.head { font-size: var(--text-display-md); }
    each. The figures take the same blue as the emphasis above them, and the
    labels sit in the statement's own ink at semibold, so they hold their own
    under a 71px numeral. */
-.section-figures .stats-band { gap: 0; margin-top: clamp(2.75rem, 5vw, 4.25rem); }
-.section-figures .stats-band .stat { padding-inline: clamp(1.5rem, 3.4vw, 3.25rem);
-  border-left: 1px solid var(--slw-gray-300); }
-.section-figures .stats-band .stat:first-child { padding-left: 0; border-left: 0; }
-.section-figures .stats-band .stat:last-child { padding-right: 0; }
+/* Even thirds put each rule hard against the figure after it and 260px from
+   the one before, because the figures are left aligned and far narrower than
+   the column holding them. So the columns size to their own content and the
+   rules are real items: space-between then splits the slack into four equal
+   gaps, which is the same air on both sides of every rule. */
+.section-figures .stats-band { display: flex; align-items: stretch;
+  justify-content: space-between; gap: 0; margin-top: clamp(2.75rem, 5vw, 4.25rem); }
+.section-figures .stats-band .stat { flex: 0 0 auto; }
+.section-figures .stats-band .stat-rule { flex: 0 0 1px; align-self: stretch;
+  background: var(--slw-gray-300); }
 .section-figures .stats-band .fig-num,
 .section-figures .stats-band .fig-num b { color: var(--slw-blue-mid); }
 .section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: 1.125rem;
   font-weight: var(--weight-semibold); color: var(--slw-ink);
   line-height: 1.5; max-width: 22ch; }
 /* stacked, the rules turn horizontal */
+/* stacked, the rules lie down and run the width */
 @media (max-width: 720px) {
-  .section-figures .stats-band .stat { padding-inline: 0; border-left: 0;
-    padding-top: 1.75rem; border-top: 1px solid var(--slw-gray-300); }
-  .section-figures .stats-band .stat:first-child { padding-top: 0; border-top: 0; }
+  .section-figures .stats-band { flex-direction: column; gap: 1.75rem;
+    justify-content: flex-start; }
+  .section-figures .stats-band .stat-rule { flex: 0 0 1px; width: 100%; }
 }
 
 /* The two approach figures now build over about five seconds. Someone who has
