@@ -788,19 +788,18 @@ h3.head { font-size: var(--text-display-md); }
 .section-figures .section-lead strong { color: var(--slw-blue-mid); }
 
 /* The three read as one set rather than three loose columns: a rule between
-   each, and the label stepped back so the figure is what you see first. The
-   figures take the navy — the blue is already doing work in the eyebrow and
-   the statement, and three 71px numerals in it was more colour than the band
-   needs. */
+   each. The figures take the blue the emphasis above them uses, and the
+   labels take the deep navy at body size, so the pair reads bright figure
+   over dark label rather than the other way round. */
 .section-figures .stats-band { gap: 0; margin-top: clamp(2.75rem, 5vw, 4.25rem); }
 .section-figures .stats-band .stat { padding-inline: clamp(1.5rem, 3.4vw, 3.25rem);
   border-left: 1px solid var(--slw-gray-300); }
 .section-figures .stats-band .stat:first-child { padding-left: 0; border-left: 0; }
 .section-figures .stats-band .stat:last-child { padding-right: 0; }
 .section-figures .stats-band .fig-num,
-.section-figures .stats-band .fig-num b { color: var(--slw-navy-deep); }
-.section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: var(--text-small);
-  color: var(--text-secondary); line-height: 1.5; max-width: 22ch; }
+.section-figures .stats-band .fig-num b { color: var(--slw-blue-mid); }
+.section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: var(--text-body);
+  color: var(--slw-navy-deep); line-height: 1.5; max-width: 22ch; }
 /* stacked, the rules turn horizontal */
 @media (max-width: 720px) {
   .section-figures .stats-band .stat { padding-inline: 0; border-left: 0;
