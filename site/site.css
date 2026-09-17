@@ -817,3 +817,8 @@ h3.head { font-size: var(--text-display-md); }
     transition: none !important; transition-delay: 0s !important;
   }
 }
+
+/* Each piece of the two approach figures also lands quicker than the site's
+   default fade, so the shorter gaps between steps do not overlap into mush. */
+.cwfw-fig .fade, .stage-fig .fade { transition-duration: 620ms; }
+.cwfw-fig .pop { transition-duration: 420ms; }
