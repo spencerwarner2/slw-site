@@ -777,27 +777,33 @@ h3.head { font-size: var(--text-display-md); }
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
 
-/* ============ HERO FIELD ============
-   A fine plot grid behind the chart, masked so it condenses under the figure
-   and dissolves before it reaches the copy. It is the surface the curve is
-   drawn on, not decoration, so it never competes with the headline. */
-.hero-grid { position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(25, 76, 133, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(25, 76, 133, 0.055) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(60% 55% at 74% 48%, #000 0%, #000 24%, transparent 72%);
-  mask-image: radial-gradient(60% 55% at 74% 48%, #000 0%, #000 24%, transparent 72%); }
-@media (max-width: 900px) { .hero-grid { display: none; } }
-
-/* the travelling mark needs a resting state before the curve is drawn */
-.hero-fig .pulse { opacity: 0; }
-
-/* The figures band carries no heading — its eyebrow and the statement under it
-   ARE the heading. At 14px and 20px they were losing to 71px numerals, so both
-   step up here and nowhere else. */
+/* ============ THE FIGURES BAND ============
+   It carries no heading — its eyebrow and the statement under it ARE the
+   heading, and at 14px and 20px they were losing to 71px numerals. Both step
+   up here and nowhere else. */
 .section-figures .section-eyebrow { font-size: 1rem; margin-bottom: 24px; }
-.section-figures .section-lead { font-size: clamp(1.45rem, 2.2vw, 2rem);
-  font-weight: var(--weight-light); line-height: 1.32; letter-spacing: -0.012em;
-  max-width: 50ch; }
-.section-figures .section-lead strong { color: var(--slw-blue-navy); }
+.section-figures .section-lead { font-size: clamp(1.375rem, 1.95vw, 1.75rem);
+  font-weight: var(--weight-light); line-height: 1.34; letter-spacing: -0.01em;
+  max-width: 52ch; }
+.section-figures .section-lead strong { color: var(--slw-blue-mid); }
+
+/* The three read as one set rather than three loose columns: a rule between
+   each, and the label stepped back so the figure is what you see first. The
+   figures take the navy — the blue is already doing work in the eyebrow and
+   the statement, and three 71px numerals in it was more colour than the band
+   needs. */
+.section-figures .stats-band { gap: 0; margin-top: clamp(2.75rem, 5vw, 4.25rem); }
+.section-figures .stats-band .stat { padding-inline: clamp(1.5rem, 3.4vw, 3.25rem);
+  border-left: 1px solid var(--slw-gray-300); }
+.section-figures .stats-band .stat:first-child { padding-left: 0; border-left: 0; }
+.section-figures .stats-band .stat:last-child { padding-right: 0; }
+.section-figures .stats-band .fig-num,
+.section-figures .stats-band .fig-num b { color: var(--slw-navy-deep); }
+.section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: var(--text-small);
+  color: var(--text-secondary); line-height: 1.5; max-width: 22ch; }
+/* stacked, the rules turn horizontal */
+@media (max-width: 720px) {
+  .section-figures .stats-band .stat { padding-inline: 0; border-left: 0;
+    padding-top: 1.75rem; border-top: 1px solid var(--slw-gray-300); }
+  .section-figures .stats-band .stat:first-child { padding-top: 0; border-top: 0; }
+}
