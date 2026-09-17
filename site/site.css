@@ -807,3 +807,13 @@ h3.head { font-size: var(--text-display-md); }
     padding-top: 1.75rem; border-top: 1px solid var(--slw-gray-300); }
   .section-figures .stats-band .stat:first-child { padding-top: 0; border-top: 0; }
 }
+
+/* The two approach figures now build over about five seconds. Someone who has
+   asked their system for less motion should get the finished picture at once,
+   not a slower trickle of it — reveal() adds .in immediately for them, but the
+   delays on these primitives would still play out one by one. */
+@media (prefers-reduced-motion: reduce) {
+  .rise, .fade, .pop, .draw, .fill-in {
+    transition: none !important; transition-delay: 0s !important;
+  }
+}
