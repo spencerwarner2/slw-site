@@ -822,3 +822,7 @@ h3.head { font-size: var(--text-display-md); }
    default fade, so the shorter gaps between steps do not overlap into mush. */
 .cwfw-fig .fade, .stage-fig .fade { transition-duration: 620ms; }
 .cwfw-fig .pop { transition-duration: 420ms; }
+
+/* A hub label appears with its own disc, so it should land in the same beat —
+   .fade's 900ms against .pop's 520ms would leave the text trailing the circle. */
+.hub-fig .fade { transition-duration: 520ms; }
