@@ -776,21 +776,3 @@ h3.head { font-size: var(--text-display-md); }
 
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
-
-/* ============ THE DARK BAND ============
-   One section on the site flips. It sits directly under the hero, so the page
-   lands on something solid straight away, and the figures finally have a
-   ground that can carry them at 71px. Colours are the footer's own navy, so
-   the page opens and closes on the same note. */
-.section-dark { background: var(--slw-navy-deep); }
-.section-dark .section-eyebrow { color: var(--slw-blue-sky); }
-.section-dark .section-lead { color: rgba(255,255,255,0.84); }
-.section-dark .section-lead strong { color: #fff; }
-/* a rule instead of raw space, so the figures read as a set */
-.section-dark .stats-band { margin-top: clamp(2.75rem, 5vw, 4rem);
-  padding-top: clamp(2.5rem, 4.5vw, 3.5rem); border-top: 1px solid rgba(255,255,255,0.16); }
-/* the count-up writes the whole figure into the <b>, so the figure is one
-   colour either way: white here, with the eyebrow left as the only accent */
-.section-dark .stats-band .stat .fig-num,
-.section-dark .stats-band .stat .fig-num b { color: #fff; }
-.section-dark .stats-band .stat .fig-lbl { color: rgba(255,255,255,0.7); }
