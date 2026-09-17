@@ -776,35 +776,3 @@ h3.head { font-size: var(--text-display-md); }
 
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
-
-/* ============ THE FIGURES BAND ============
-   It carries no heading — its eyebrow and the statement under it ARE the
-   heading, and at 14px and 20px they were losing to 71px numerals. Both step
-   up here and nowhere else. */
-.section-figures .section-eyebrow { font-size: 1rem; margin-bottom: 24px; }
-.section-figures .section-lead { font-size: clamp(1.375rem, 1.95vw, 1.75rem);
-  font-weight: var(--weight-light); line-height: 1.34; letter-spacing: -0.01em;
-  max-width: 52ch; }
-.section-figures .section-lead strong { color: var(--slw-blue-mid); }
-
-/* The three read as one set rather than three loose columns: a rule between
-   each. The figures take the blue the emphasis above them uses, and the
-   labels take the deep navy at body size, so the pair reads bright figure
-   over dark label rather than the other way round. */
-/* The columns size to their own content rather than to even thirds, so
-   space-between leaves the same gap between each pair — even thirds left the
-   figures drifting, since they are left aligned and far narrower than the
-   column they sat in. */
-.section-figures .stats-band { display: flex; align-items: flex-start;
-  justify-content: space-between; gap: clamp(2rem, 4vw, 4rem);
-  margin-top: clamp(2.75rem, 5vw, 4.25rem); }
-.section-figures .stats-band .stat { flex: 0 0 auto; }
-.section-figures .stats-band .fig-num,
-.section-figures .stats-band .fig-num b { color: var(--slw-blue-mid); }
-.section-figures .stats-band .fig-lbl { margin-top: 16px; font-size: 1.125rem;
-  font-weight: var(--weight-semibold); color: var(--slw-ink);
-  line-height: 1.5; max-width: 22ch; }
-@media (max-width: 720px) {
-  .section-figures .stats-band { flex-direction: column; gap: 2.25rem;
-    justify-content: flex-start; }
-}
