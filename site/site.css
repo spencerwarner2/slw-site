@@ -813,8 +813,10 @@ h3.head { font-size: var(--text-display-md); }
    not a slower trickle of it — reveal() adds .in immediately for them, but the
    delays on these primitives would still play out one by one. */
 @media (prefers-reduced-motion: reduce) {
-  .rise, .fade, .pop, .draw, .fill-in {
+  .rise, .fade, .pop, .draw, .fill-in,
+  .tl .ev::before, .tl .ev::after, .tl .ev > * {
     transition: none !important; transition-delay: 0s !important;
+    opacity: 1 !important; transform: none !important;
   }
 }
 
@@ -826,3 +828,33 @@ h3.head { font-size: var(--text-display-md); }
 /* A hub label appears with its own disc, so it should land in the same beat —
    .fade's 900ms against .pop's 520ms would leave the text trailing the circle. */
 .hub-fig .fade { transition-duration: 520ms; }
+
+/* ============ THE TIMELINE BUILDS ============
+   It used to arrive as one block. Now each event lands in turn and in the
+   order it happened: the dot appears, its text follows, then the spine grows
+   down from it to reach the next dot — so the line is drawn by the history
+   rather than waiting behind it. 0.62s a step, which is the time a segment
+   takes to travel, so the next dot arrives exactly as the line reaches it. */
+[data-animate] .tl .ev::before { transform: scale(0);
+  transition: transform 380ms var(--ease-out); }
+[data-animate].in .tl .ev::before { transform: scale(1); }
+
+[data-animate] .tl .ev::after { transform: scaleY(0); transform-origin: top center;
+  transition: transform 420ms var(--ease-out); }
+[data-animate].in .tl .ev::after { transform: scaleY(1); }
+
+[data-animate] .tl .ev > * { opacity: 0; transform: translateY(8px);
+  transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out); }
+[data-animate].in .tl .ev > * { opacity: 1; transform: none; }
+
+.tl .ev:nth-child(1)::before { transition-delay: 0s }
+.tl .ev:nth-child(1) > *   { transition-delay: 0.14s }
+.tl .ev:nth-child(1)::after { transition-delay: 0.20s }
+.tl .ev:nth-child(2)::before { transition-delay: 0.62s }
+.tl .ev:nth-child(2) > *   { transition-delay: 0.76s }
+.tl .ev:nth-child(2)::after { transition-delay: 0.82s }
+.tl .ev:nth-child(3)::before { transition-delay: 1.24s }
+.tl .ev:nth-child(3) > *   { transition-delay: 1.38s }
+.tl .ev:nth-child(3)::after { transition-delay: 1.44s }
+.tl .ev:nth-child(4)::before { transition-delay: 1.86s }
+.tl .ev:nth-child(4) > *   { transition-delay: 2.00s }
