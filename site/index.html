@@ -13,6 +13,7 @@
 <!-- HERO -->
 <section class="panel hero" data-animate>
   <div class="glow-hero"></div>
+  <div class="hero-grid"></div>
   <div class="panel-inner hero-split">
 
     <div class="copy">
@@ -21,49 +22,89 @@
     </div>
 
     <div class="figwrap">
-      <svg class="fig" viewBox="26 40 520 322" role="img" aria-label="A company's growth curve from early stage to IPO or acquisition, with SLW engaging at three separate points through the growth and expansion phase rather than at a single round">
+      <svg class="fig hero-fig" viewBox="26 40 520 322" role="img" aria-label="A company's growth curve from early stage to IPO or acquisition, with SLW engaging at three separate points through the growth and expansion phase rather than at a single round">
         <defs>
           <linearGradient id="heroCurve" x1="0" y1="1" x2="1" y2="0">
             <stop offset="0" stop-color="var(--slw-blue-sky)"/>
             <stop offset="1" stop-color="var(--slw-blue)"/>
           </linearGradient>
+          <!-- the area reads as the company's value, not as a grey shape -->
+          <linearGradient id="heroFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--slw-blue)" stop-opacity="0.22"/>
+            <stop offset="0.72" stop-color="var(--slw-blue)" stop-opacity="0.02"/>
+            <stop offset="1" stop-color="var(--slw-blue)" stop-opacity="0"/>
+          </linearGradient>
+          <!-- gridlines arrive out of nothing and leave the same way -->
+          <linearGradient id="heroGrid" gradientUnits="userSpaceOnUse" x1="32" y1="0" x2="512" y2="0">
+            <stop offset="0" stop-color="var(--slw-blue-navy)" stop-opacity="0"/>
+            <stop offset="0.22" stop-color="var(--slw-blue-navy)" stop-opacity="0.16"/>
+            <stop offset="0.78" stop-color="var(--slw-blue-navy)" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="var(--slw-blue-navy)" stop-opacity="0"/>
+          </linearGradient>
+          <filter id="heroGlow" x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
         </defs>
+
+        <!-- plot rules -->
+        <g class="fade" style="transition-delay:.15s" stroke="url(#heroGrid)" stroke-width="1">
+          <line x1="32" y1="110" x2="512" y2="110"/>
+          <line x1="32" y1="157" x2="512" y2="157"/>
+          <line x1="32" y1="204" x2="512" y2="204"/>
+          <line x1="32" y1="251" x2="512" y2="251"/>
+        </g>
 
         <!-- area under the curve -->
         <path class="fade" style="transition-delay:.85s"
               d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74 L512 298 L32 298 Z"
-              fill="var(--slw-gray-100)" fill-opacity=".3"/>
+              fill="url(#heroFill)"/>
 
         <!-- baseline -->
         <line x1="32" y1="298" x2="512" y2="298" stroke="var(--slw-gray-200)" stroke-width="1"/>
 
-        <!-- the growth curve -->
-        <path class="draw" style="--len:600"
-              d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74"
-              fill="none" stroke="url(#heroCurve)" stroke-width="2.25" stroke-linecap="round"/>
+        <!-- the curve, over its own bloom -->
+        <path class="draw" style="--len:600;transition-delay:.1s" d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74"
+              fill="none" stroke="var(--slw-blue)" stroke-width="8" stroke-linecap="round"
+              opacity="0.21" filter="url(#heroGlow)"/>
+        <path class="draw" style="--len:600" d="M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74"
+              fill="none" stroke="url(#heroCurve)" stroke-width="3.2" stroke-linecap="round"/>
+
+        <!-- capital moving along the curve, on a loop once the line is drawn -->
+        <g class="pulse" style="offset-path: path('M32 294 C 168 294 164 208 288 180 C 412 152 416 98 512 74');">
+          <circle r="9" fill="var(--slw-blue)" opacity="0.22"/>
+          <circle r="3.6" fill="var(--slw-blue)"/>
+        </g>
 
         <!-- SLW touchpoints, all within growth / expansion -->
         <g class="pop" style="transition-delay:1.05s">
           <line x1="204" y1="209" x2="204" y2="189" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+          <circle cx="204" cy="218" r="13" fill="var(--slw-blue)" opacity="0.13"/>
           <circle cx="204" cy="218" r="8.5" fill="var(--slw-white)"/>
           <circle cx="204" cy="218" r="4.5" fill="var(--slw-blue)"/>
           <text class="lbl-slw" x="204" y="181" text-anchor="middle">SLW</text>
         </g>
         <g class="pop" style="transition-delay:1.28s">
           <line x1="331" y1="159" x2="331" y2="139" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+          <circle cx="331" cy="168" r="13" fill="var(--slw-blue)" opacity="0.13"/>
           <circle cx="331" cy="168" r="8.5" fill="var(--slw-white)"/>
           <circle cx="331" cy="168" r="4.5" fill="var(--slw-blue)"/>
           <text class="lbl-slw" x="331" y="131" text-anchor="middle">SLW</text>
         </g>
         <g class="pop" style="transition-delay:1.51s">
           <line x1="445" y1="93" x2="445" y2="73" stroke="var(--slw-blue-pale)" stroke-width="1.25"/>
+          <circle cx="445" cy="102" r="13" fill="var(--slw-blue)" opacity="0.13"/>
           <circle cx="445" cy="102" r="8.5" fill="var(--slw-white)"/>
           <circle cx="445" cy="102" r="4.5" fill="var(--slw-blue)"/>
           <text class="lbl-slw" x="445" y="65" text-anchor="middle">SLW</text>
         </g>
 
+        <!-- the exit drops to the baseline, so the climb lands rather than stops -->
+        <line class="fade" style="transition-delay:1.66s" x1="512" y1="101" x2="512" y2="297"
+              stroke="var(--slw-blue-navy)" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+
         <!-- exit -->
         <g class="pop" style="transition-delay:1.74s">
+          <circle cx="512" cy="74" r="34" fill="var(--slw-blue-navy)" opacity="0.12"/>
           <circle cx="512" cy="74" r="27" fill="#194C85"/>
           <text class="lbl-svg" x="512" y="71" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">IPO /</text>
           <text class="lbl-svg" x="512" y="84" text-anchor="middle" fill="#fff" style="font-size:11px;font-weight:600">M&amp;A</text>
@@ -83,7 +124,7 @@
 </section>
 
 <!-- BY THE NUMBERS -->
-<section class="section section-tint" data-animate data-replay>
+<section class="section section-tint section-figures" data-animate data-replay>
   <div class="wrap">
     <p class="section-eyebrow rise">By the Numbers</p>
     <p class="section-lead rise">15 years ago, we built SLW to rewrite the growth capital playbook. The result is capital that <strong>adapts to the company</strong>, instead of the other way around.</p>

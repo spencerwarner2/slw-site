@@ -776,3 +776,28 @@ h3.head { font-size: var(--text-display-md); }
 
 /* Sparrow. A 3840x2160 export where the mark fills 38% of the height. */
 .logo-wall img[src$="sparrow.png"] { max-height: 79px; }
+
+/* ============ HERO FIELD ============
+   A fine plot grid behind the chart, masked so it condenses under the figure
+   and dissolves before it reaches the copy. It is the surface the curve is
+   drawn on, not decoration, so it never competes with the headline. */
+.hero-grid { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(25, 76, 133, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(25, 76, 133, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(60% 55% at 74% 48%, #000 0%, #000 24%, transparent 72%);
+  mask-image: radial-gradient(60% 55% at 74% 48%, #000 0%, #000 24%, transparent 72%); }
+@media (max-width: 900px) { .hero-grid { display: none; } }
+
+/* the travelling mark needs a resting state before the curve is drawn */
+.hero-fig .pulse { opacity: 0; }
+
+/* The figures band carries no heading — its eyebrow and the statement under it
+   ARE the heading. At 14px and 20px they were losing to 71px numerals, so both
+   step up here and nowhere else. */
+.section-figures .section-eyebrow { font-size: 1rem; margin-bottom: 24px; }
+.section-figures .section-lead { font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: var(--weight-light); line-height: 1.32; letter-spacing: -0.012em;
+  max-width: 50ch; }
+.section-figures .section-lead strong { color: var(--slw-blue-navy); }
